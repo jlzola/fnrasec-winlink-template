@@ -1,0 +1,29 @@
+Form: FNRASEC_AR_Initial.html,FNRASEC_AR_Viewer.html
+SeqInc:
+To: <var vTo> 
+Message N°: <var BullNr>
+Subject: [AR] <var vLieu>/<var SeqNum> from <var vTo>, <var DateTime> / <var vSubject>
+-------------------------------------------------------------------------------------------
+Point de Situation:<var vNumber>
+1. Message: <var vLieu> <var SeqNum>
+2. Date/Heure: <var DateTime>
+4. Opérateur: <var vOper>
+5. Autorité Origine: <var vOrigine>
+6. Destinataires : <var vTo>
+7. Autorités Destinataires: <var vDestination>
+8. Niveau de Confidentialité: <var vConfid>
+9. Sujet: <var vSubject>
+10. Commentaires: <var vComment>
+
+------------------------------------
+
+------------------------------------
+Express Sending Station: <MsgSender>
+Express Version: <ProgramVersion>
+Template Version: <var TemplateVersion>
+
+
+
+
+
+

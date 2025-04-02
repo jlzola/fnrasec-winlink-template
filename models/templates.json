@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Accusé de réception",
+    "name": "AR",
+    "version": "2.1.29"
+  },
+  {
+    "title": "Message",
+    "name": "Message",
+    "version": "1.0.24"
+  },
+  {
+    "title": "Rapport de situation",
+    "name": "Situation",
+    "version": "1.0.24"
+  }
+]

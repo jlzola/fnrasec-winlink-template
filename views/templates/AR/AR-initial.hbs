@@ -1,0 +1,136 @@
+<script>
+  function init() {
+    // 
+    // Event pour l'affichage du panel d'aide
+    document.getElementById('help-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.getElementById('help-panel').classList.add('active');
+    });
+    document.getElementById('close-btn').addEventListener('click', function () {
+      document.getElementById('help-panel').classList.remove('active');
+    });
+
+    // 
+    // Initialise la date et l'heure 
+    SetDateToUTC();
+  }
+</script>
+
+<section id="main">
+  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post" id="ARForm"
+    enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
+
+    <input name="TemplateVersion" type="hidden" id="TemplateVersion" value="{{version}}" />
+
+    <div class="grid-container3">
+      <div class="form-group" style="width: 180px;">
+        <label for="vNumber">Numéro AR</label>
+        <input name="vNumber" type="text" id="vNumber" placeholder="Votre numéro d'AR"
+          onkeypress="return isNumberKey(event)" onchange="if (this.value=='-') this.value='N/A'" size="4"
+          maxlength="54">
+      </div>
+
+      <div class="form-group">
+        <label for="vLieu">N° Message</label>
+        <div class="form-group" style="display: flex; gap: 2px; width: 200px;">
+          <select aria-placeholder="Origine" name="vLieu" id="vLieu" required style="width: 110px;">
+            <option value="RASEC" selected>RASEC</option>
+            <option value="COGIC">COGIC</option>
+            <option value="COZ-Est">COZ-Est</option>
+            <option value="COZ-Idf">COZ-Idf</option>
+            <option value="COZ-Nord">COZ-Nord</option>
+            <option value="COZ-Ouest">COZ-Ouest</option>
+            <option value="COZ-Sud">COZ-Sud</option>
+            <option value="COZ-SE">COZ-SE</option>
+            <option value="COZ-SO">COZ-SO</option>
+            <option value="Outremer">Outremer</option>
+            <option value="COD">COD</option>
+          </select>
+          <input title="Vous pouvez écraser cette référence avec votre propre numérotation" name="SeqNum" id="SeqNum"
+            value="{SeqNum}" size="6" maxlength="6" style="color: red;  width: 80px;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Niveau de confidentialité</label>
+        <div class="radio-group">
+          <div class="red">
+            <input type="radio" name="vConfid" value="DR" checked>
+            <span>DR</span>
+          </div>
+          <div class="orange">
+            <input type="radio" name="vConfid" value="Normal">
+            <span>Normal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="DateTime">Date & Heure</label>
+        <input id="DateTime" size="20" name="DateTime" maxlength="23" placeholder="Cliquer pour entrer l'heure"
+          title="Heure UTC par defaut" />
+      </div>
+
+      <div class="form-group">
+        <label for="BtnDate">&nbsp;</label>
+        <button id="BtnDate" type="button" onclick="SetDateToUTC()"
+          title="Cliquer pour basculer en heure UTC ou Locale">UTC / LOC</button>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="msgSender">Indicatif de la station</label>
+        <input style="color: red" name="msgSender" id="msgSender" value="{msgSender}" size="8" maxlength="8">
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vOper">Indicatif de l'opérateur</label>
+        <input name="vOper" title="Indicatif de l'opérateur" size="10" maxlength="10" class="bg-yellow" />
+      </div>
+
+      <div class="form-group">
+        <label for="vOrigine">Autorité origine</label>
+        <input name="vOrigine" title="Autorité origine" size="35" maxlength="35" class="bg-green" />
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vTo">Indicatif du destinataire</label>
+        <input name="vTo" title="Indicatif du destinataire" size="10" maxlength="10" class="bg-yellow" />
+
+      </div>
+
+      <div class="form-group">
+        <label for="vDestination">Autorité destinataire</label>
+        <input name="vDestination" title="Autorité destinataire" size="35" maxlength="35" class="bg-green" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="vSubject">Sujet</label>
+      <textarea placeholder="Ex : Votre message 'Sujet du message' du 2025-03-20 15:00 UTC" name="vSubject"
+        id="vSubject" title="Sujet du message" rows="1" cols="100" required onkeyup="AutoGrowTextArea(this)"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="vComment">Commentaires</label>
+      <textarea placeholder="Votre commentaire. Ex: Message bien reçu. 73 de Jelo F4IXH" name="vComment" id="vComment"
+        title="Commentaires" rows="2" cols="110" required onkeyup="AutoGrowTextArea(this)"></textarea>
+    </div>
+
+
+    <div class="form-group button">
+      <button type="submit">Envoyer</button>
+    </div>
+
+  </form>
+</section>
+
+{{> help/AR-help}}
