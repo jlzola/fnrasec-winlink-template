@@ -1,0 +1,74 @@
+{{#contentFor "body"}}
+
+<p class="info">Ce formulaire permet de créer un <b>accusé de réception</b>.</p>
+
+<p class="warning">En cours d'écriture...</p>
+
+
+<h4>Instructions générales :</h4>
+<ul>
+  <!-- <li>Remplissez tous les champs obligatoires marqués d'un astérisque (*)</li> -->
+  <li>Assurez-vous que les informations sont exactes et à jour</li>
+  <li>Vérifiez vos données avant de soumettre le formulaire</li>
+</ul>
+
+<h4>Champs spécifiques :</h4>
+<ul>
+  <li><strong>N° AR</strong><br>
+    Le numéro que vous souhaitez donner à votre accusé de réception.</li>
+
+  <li><strong>N° Message</strong><br>
+    {{> help/fields/numero-message-help}}
+  </li>
+
+  <li><strong>Niveau de confidentialité</strong><br>
+    Le niveau de confidentialité du message.
+    <ul>
+      <li>DR <i>(D.... R...)</i></li>
+      <li>Normal</li>
+    </ul>
+  </li>
+
+  <li><strong>Date & Heure</strong><br>
+    La date de l'ouverture du formulaire.<br>
+    Le bouton permet de changer le format de l'heure en UTC ou locale.</li>
+
+  <li><strong>Indicatif de la station</strong><br>
+    L'indicatif de la station qui envoie le message.</li>
+
+  <li><strong>Indicatif de l'opérateur</strong><br>
+    {{> help/fields/indicatif-operateur-help}}
+  </li>
+
+  <li><strong>Autorité origine</strong><br>
+    L'autorité qui a émis le message. <br>
+    <i>Ex: Cézoc SUD, COGIC, Préfecture, etc...</i>
+  </li>
+
+  <li><strong>Autorités destinataires</strong><br>
+    La ou les autorités qui doivent recevoir le message. <br>
+    <i>Ex: Cézoc SUD, COGIC, Préfecture, etc...</i>
+  </li>
+
+  <li><strong>Indicatif du destinataire</strong><br>
+    L'indicatif du radioamateur qui doit recevoir le message.</li>
+
+  <li><strong>Sujet</strong><br>
+    Le sujet du message reçu. <br>
+    <i>Recopier ici le sujet du message reçu et pour lequel vous emettez l'accusé de réception.</i>
+  </li>
+
+  <li><strong>Commentaire</strong><br>
+    Un commentaire sur le message reçu. <br>
+    <i>Ex: Message reçu le 30/03/2025, Message reçu partiellement, etc...</i>
+  </li>
+</ul>
+
+<p class="info">Le bouton envoyer permet d'envoyer les données du formulaire dans le message Winlink associé.</p>
+<p>&nbsp;</p>
+<p class="note">Pour toute question supplémentaire, veuillez contacter l'administrateur FNRASEC.</p>
+
+
+{{/contentFor}}
+
+{{> help/help-panel}}
