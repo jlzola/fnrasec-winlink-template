@@ -133,6 +133,10 @@ hr {
   font-size: 0.875rem;
 }
 
+.form-group textarea {
+  min-width: 100%;
+}
+
 .form-group select {
   padding: 0.3rem;
   margin-bottom: 0;

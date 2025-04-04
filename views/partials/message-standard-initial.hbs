@@ -17,19 +17,11 @@
 </script>
 
 <section id="main">
-  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post" id="ARForm"
-    enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
-
+  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post"
+    id="{{name}}Form" enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
     <input name="TemplateVersion" type="hidden" id="TemplateVersion" value="{{version}}" />
 
     <div class="grid-container3">
-      <div class="form-group" style="width: 180px;">
-        <label for="vNumber">N° AR</label>
-        <input name="vNumber" type="text" id="vNumber" placeholder="Votre numéro d'AR"
-          onkeypress="return isNumberKey(event)" onchange="if (this.value=='-') this.value='N/A'" size="4"
-          maxlength="54">
-      </div>
-
       <div class="form-group">
         <label for="vLieu">N° Message</label>
         <div style="display: flex; gap: 2px; width: 200px;">
@@ -52,6 +44,24 @@
       </div>
 
       <div class="form-group">
+        <label>Priorité</label>
+        <div class="radio-group">
+          <div class="red">
+            <input type="radio" name="Priority" value="IMMEDIAT" checked>
+            <span>Immédiat</span>
+          </div>
+          <div class="orange">
+            <input type="radio" name="Priority" value="URGENT">
+            <span>Urgent</span>
+          </div>
+          <div class="green">
+            <input type="radio" name="Priority" value="ROUTINE">
+            <span>Routine</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
         <label>Niveau de confidentialité</label>
         <div class="radio-group">
           <div class="red">
@@ -64,10 +74,10 @@
           </div>
         </div>
       </div>
+
     </div>
 
-
-    <div class="grid-container2">
+    <div class="grid-container3">
       <div class="form-group" style="display: flex; gap: 0.2rem; align-items: flex-end; margin-right: 5px;">
         <div style="flex: 1;">
           <label for="DateTime">Date & Heure</label>
@@ -78,63 +88,80 @@
             title="Cliquer pour basculer en heure UTC ou Locale">UTC / LOC</button>
         </div>
       </div>
+
+      <div class="form-group">
+        <div style="display: flex; align-items: center; height: 100%; padding-top: 10px; padding-left: 0px;">
+          <input type="checkbox" name="Dem_Rep" id="Dem_Rep" value="Oui" checked
+            onclick="this.value = this.checked ? 'Oui' : 'Non';"
+            style="width: 20px; height: 20px; margin-right: 8px; margin-top: 0;">
+          <label for="Dem_Rep" style="margin: 0; display: flex; align-items: center;">Demander un accusé de
+            réception</label>
+        </div>
+      </div>
+
       <div class="form-group">
         <label for="msgSender">Indicatif de la station</label>
         <input style="color: red" name="msgSender" id="msgSender" value="{msgSender}" size="8" maxlength="8">
       </div>
+
     </div>
 
     <div class="grid-container2">
+
       <div class="form-group">
         <label for="vOper">Indicatif de l'opérateur</label>
         <input name="vOper" title="Indicatif de l'opérateur"
-          placeholder="Indicatif du radioamateur qui opère la station. Ex : F4IXH" size="10" maxlength="10"
-          class="bg-yellow" />
+          placeholder="Indicatif du radioamateur qui opère la station." size="10" maxlength="10" class="bg-yellow" />
       </div>
 
       <div class="form-group">
         <label for="vOrigine">Autorité origine</label>
-        <input name="vOrigine" title="Autorité origine" placeholder="Ex: COGIC, COD, COZ, etc..." size="80"
+        <input name="vOrigine" title="Autorité origine" placeholder="Ex: Cézoc SUD, COGIC, Préfecture, etc..." size="80"
           maxlength="80" class="bg-green" />
       </div>
     </div>
 
-    <div class="grid-container2">
+    <div class="grid-container">
       <div class="form-group">
-        <label for="vTo">Indicatif du destinataire</label>
+        <label for="vTo">Indicatifs du/des destinataire(s)</label>
         <input name="vTo" title="Indicatif du destinataire"
-          placeholder="L'indicatif du radioamateur qui reçoit le message. Ex : F1COB" size="10" maxlength="10"
-          class="bg-yellow" />
+          placeholder="Les indicatifs doivent être séparés par des ';'. Ex : F6PCT;F8KFG;F8KIA" size="100"
+          maxlength="100" class="bg-yellow" />
       </div>
+    </div>
+
+    <div class="grid-container">
       <div class="form-group">
-        <label for="vDestination">Autorité destinataire</label>
-        <input name="vDestination" title="Autorité destinataire" placeholder="Ex: COGIC, COD, COZ, etc..." size="80"
-          maxlength="80" class="bg-green" />
+        <label for="vDestination">Autorités destinataires</label>
+        <input name="vDestination" title="Autorités destinataires" placeholder="Ex: COGIC, COD, COZ, etc..." size="100"
+          maxlength="100" class="bg-green" />
       </div>
     </div>
 
     <div class="grid-container">
       <div class="form-group">
         <label for="vSubject">Sujet</label>
-        <textarea placeholder="Copier ici le titre du message reçu avec son numéro" name="vSubject" id="vSubject"
-          title="Sujet du message" rows="1" cols="100" required onkeyup="AutoGrowTextArea(this)"></textarea>
+        <textarea placeholder="Ex : Votre message 'Sujet du message' du 2025-03-20 15:00 UTC" name="vSubject"
+          id="vSubject" title="Sujet du message" rows="1" cols="100" required
+          onkeyup="AutoGrowTextArea(this)"></textarea>
       </div>
     </div>
 
     <div class="grid-container">
       <div class="form-group">
-        <label for="vComment">Commentaires</label>
-        <textarea placeholder="Votre commentaire. Ex: Message bien reçu. 73 de Jelo F4IXH" name="vComment" id="vComment"
-          title="Commentaires" rows="7" cols="110" required onkeyup="AutoGrowTextArea(this)"></textarea>
+        <label for="vMessage">Message de l'autorité</label>
+        <textarea placeholder="Ecrire ou copier ici le message de l'autorité à transmettre" name="vMessage"
+          id="vMessage" title="Message de l'autorité" rows="12" cols="110" required
+          onkeyup="AutoGrowTextArea(this)"></textarea>
       </div>
     </div>
-
 
     <div class="form-group button">
       <button type="submit">Envoyer</button>
     </div>
 
+
   </form>
 </section>
 
-{{> help/AR-help}}
+{{> help/message-standard-help}}

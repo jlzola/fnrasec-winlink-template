@@ -8,8 +8,13 @@ const router = express.Router();
 // @desc    Homepage
 // @route   GET /
 router.get('/', (req, res) => {
+
+  // récupère les informations des templates
+  const templates = templatesService.getTemplates();
+
   res.render('index', {
-    title: "FNRASEC Winlink Templates - Home"
+    title: "FNRASEC Winlink Templates",
+    templates
   });
 });
 
@@ -72,6 +77,32 @@ router.get('/FNRASEC_MessageExercice_Viewer', (req, res) => {
   });
 });
 
+// @desc   MessageCommandement_Initial
+// @route   GET /FNRASEC_MessageCommandement_Initial
+router.get('/FNRASEC_MessageCommandement_Initial', (req, res) => {
+
+  // récupère les informations du template MessageCommandement 
+  const template = templatesService.getTemplateInfo('MessageCommandement');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.initial}`, {
+    ...template,
+    help: "yes"
+  });
+});
+
+// @desc   MessageCommandement_Viewer
+// @route   GET /FNRASEC_MessageCommandement_Viewer
+router.get('/FNRASEC_MessageCommandement_Viewer', (req, res) => {
+
+  // récupère les informations du template MessageCommandement 
+  const template = templatesService.getTemplateInfo('MessageCommandement');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.viewer}`, {
+    ...template
+  });
+});
 
 // @desc    About
 // @route   GET /about

@@ -19,6 +19,7 @@ LEs modèles de formulaire FNRAEC pour Winlink + VARA.
 ## ✨ Fonctionnalités
 
 - Formulaire "Message Exercice" 
+- Formulaire "Message de commandement" 
 - Formulaire "Etat des Réseaux"  (à venir)
 - Formualire "Accusé de Réception"
 

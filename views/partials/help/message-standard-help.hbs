@@ -1,6 +1,6 @@
 {{#contentFor "body"}}
 
-<p class="info">Ce formulaire permet de créer un <b>accusé de réception</b> dans un nouveau message Winlink.</p>
+<p class="info">Ce formulaire permet d'envoyer un <b>message par Winlink.</b>.</p>
 
 <p class="warning">En cours d'écriture...</p>
 
@@ -15,61 +15,69 @@
 </ul>
 
 <h4>Champs spécifiques :</h4>
-<ul>
-  <li><strong>N° AR</strong><br>
-    Le numéro que vous souhaitez donner à votre accusé de réception.</li>
 
+<ul>
   <li><strong>N° Message</strong><br>
     {{> help/fields/numero-message-help}}
+  </li>
+
+  <li><strong>Niveau de priorité</strong><br>
+    Le niveau de priorité du message.
   </li>
 
   <li><strong>Niveau de confidentialité</strong><br>
     {{> help/fields/confidentialite-help}}
   </li>
 
-
   <li><strong>Date & Heure</strong><br>
     La date de l'ouverture du formulaire.<br>
-    Le bouton permet de changer le format de l'heure en UTC ou locale.</li>
+    <i>Le bouton permet de changer le format de l'heure en UTC ou locale.</i>
+  </li>
+
+  <li><strong>Demande de l'accusé de reception</strong><br>
+    <i>A cocher si vous demandez un accusé de reception.</i>
+  </li>
 
   <li><strong>Indicatif de la station</strong><br>
     {{> help/fields/indicatif-station-help}}
   </li>
-
 
   <li><strong>Indicatif de l'opérateur</strong><br>
     {{> help/fields/indicatif-operateur-help}}
   </li>
 
   <li><strong>Autorité origine</strong><br>
-    L'autorité qui a émis le message. <br>
+    L'autorité qui émet le message. <br>
     <i>Ex: COGIC, COD, COZ, etc...</i>
   </li>
 
-
-  <li><strong>Autorité destinataire</strong><br>
-    L'autorité qui reçoit le message. <br>
-    <i>Ex: COGIC, COD, COZ, etc...</i>
+  <li><strong>Indicatifs du/des destinataire(s)</strong><br>
+    Indicatif(s) du ou des destinataires du message.<br>
+    <i>Ce sont les indicatifs du ou des destinataires présents ou des organismes représentés (COD - COZ - COGIC)<br>
+      Les indicatifs doivent être séparés par des ";"<br>
+      Ex : F6PCT;F8KFG;F8KIA</i>
   </li>
 
-  <li><strong>Indicatif du destinataire</strong><br>
-    L'indicatif du radioamateur qui reçoit le message.</li>
-
+  <li><strong>Autorités destinataires</strong><br>
+    La ou les autorités recevoir le message. <br>
+    <i>Ex: COGIC, COD, COZ, etc...</i>
+  </li>
 
   <li><strong>Sujet</strong><br>
     Le sujet du message reçu. <br>
-    <i>Recopier ici le sujet et le numéro du message reçu, pour lequel vous emettez l'accusé de réception.</i>
+    <i>Recopier ici le sujet du message reçu et pour lequel vous emettez l'accusé de réception.</i>
   </li>
 
-  <li><strong>Commentaire</strong><br>
-    Un commentaire sur le message reçu. <br>
-    <i>Ex: Message reçu le 30/03/2025, Message reçu partiellement, etc...</i>
+  <li><strong>Message de l'autorité</strong><br>
+    C'est le corp du message de l'autorité à transmettre.<br>
   </li>
 </ul>
 
-<p class="info">Le bouton envoyer permet d'envoyer les données du formulaire dans le message Winlink associé.</p>
+<p class="info">Le bouton envoyer permet d'envoyer les données du formulaire dans le message ouvert de l'application
+  Winlink.</p>
 <p>&nbsp;</p>
 <p class="note">Pour toute question supplémentaire, veuillez contacter l'administrateur FNRASEC.</p>
+
 
 {{/contentFor}}
 

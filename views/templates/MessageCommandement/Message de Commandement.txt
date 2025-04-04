@@ -1,0 +1,33 @@
+﻿Form: FNRASEC_MessageCommandement_Initial.html, FNRASEC_MessageCommandement_Viewer.html
+SeqInc:
+To: <var vTo> 
+Message N°: <var BullNr>
+Subject: [<var Priority>] Msg# <var SeqNum> From <var vTo>, <var DateTime> <var vSubject>
+-------------------------------------------------------------------------------------------  	
+ActivityType: <var vActivityType>
+-------------------------------------------------------------------------------------------
+Message N°:<var vLieu> <var SeqNum>
+Station d'Origine: <var vOrig>
+Call Station: <var msgSender>
+Opérateur: <var vOper>
+Origine Message: <var vOrigine>
+Call Destinataire: <var vDest>
+Destination Message: <var vDestination>
+
+Participants: <var vTo>
+Date/Heure: <var DateTime>
+Priorité: <var Priority>
+Sujet: <var vSubject>
+Demande Réponse: <var Dem_Rep>
+Message: <var vMessage>
+
+------------------------------------
+Express Sending Station: <MsgSender>
+Express Version: <ProgramVersion>
+Template Version: <var Templateversion>
+
+
+
+
+
+
