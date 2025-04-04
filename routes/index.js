@@ -45,6 +45,32 @@ router.get('/FNRASEC_AR_Viewer', (req, res) => {
   });
 });
 
+// @desc   MessageExercice_Initial
+// @route   GET /FNRASEC_MessageExercice_Initial
+router.get('/FNRASEC_MessageExercice_Initial', (req, res) => {
+
+  // récupère les informations du template MessageExercice 
+  const template = templatesService.getTemplateInfo('MessageExercice');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.initial}`, {
+    ...template,
+    help: "yes"
+  });
+});
+
+// @desc   MessageExercice_Viewer
+// @route   GET /FNRASEC_MessageExercice_Viewer
+router.get('/FNRASEC_MessageExercice_Viewer', (req, res) => {
+
+  // récupère les informations du template MessageExercice 
+  const template = templatesService.getTemplateInfo('MessageExercice');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.viewer}`, {
+    ...template
+  });
+});
 
 
 // @desc    About

@@ -8,7 +8,7 @@
     document.getElementById("vOrigine").innerHTML = setacc(document.getElementById("vOrigine").innerHTML);
     document.getElementById("vDestination").innerHTML = setacc(document.getElementById("vDestination").innerHTML);
     document.getElementById("vSubject").innerHTML = setacc(document.getElementById("vSubject").innerHTML);
-    document.getElementById("vComment").innerHTML = setacc(document.getElementById("vComment").innerHTML);
+    document.getElementById("vMessage").innerHTML = setacc(document.getElementById("vMessage").innerHTML);
   }
 </script>
 
@@ -27,13 +27,28 @@
     </div>
 
     <div class="form-group">
-      <label>Niveau de confidentialité</label>
-      <span id="vConfid" class="value-text">{var vConfid}</span>
+      <label>Priorité</label>
+      <span id="Priority" class="value-text">{var Priority}</span>
     </div>
 
     <div class="form-group">
+      <label>Niveau de confidentialité</label>
+      <span id="vConfid" class="value-text">{var vConfid}</span>
+    </div>
+  </div>
+
+  <div class="grid-container3">
+    <div class="form-group">
       <label for="DateTime">Date & Heure</label>
       <span id="DateTime" class="value-text">{var DateTime}</span>
+    </div>
+
+    <div class="form-group">
+      <label for="Dem_Rep">Accusé de réception demandé</label>
+      <span id="Dem_Rep" class="value-text">{var Dem_Rep}</span>
+      <script>
+        document.getElementById("Dem_Rep").innerHTML = document.getElementById("Dem_Rep").innerHTML === "Oui" ? "OUI" : "NON";
+      </script>
     </div>
   </div>
 
@@ -64,10 +79,9 @@
 
   <div class="grid-container3">
     <div class="form-group">
-      <label for="vTo">Indicatif du destinataire</label>
+      <label for="vTo">Indicatif(s) du/des destinataire(s)</label>
       <span id="vTo" class="value-text">{var vTo}</span>
     </div>
-
   </div>
 
   <hr>
@@ -81,8 +95,8 @@
 
   <div class="grid-container">
     <div class="form-group">
-      <label for="vComment">Commentaires</label>
-      <span id="vComment" class="value-text">{var vComment}</span>
+      <label for="vMessage">Message de l'autorité</label>
+      <span id="vMessage" class="value-text">{var vMessage}</span>
     </div>
   </div>
 
