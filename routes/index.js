@@ -104,8 +104,6 @@ router.get('/FNRASEC_MessageCommandement_Viewer', (req, res) => {
   });
 });
 
-
-
 // @desc    About
 // @route   GET /about
 router.get('/about', (req, res) => {
