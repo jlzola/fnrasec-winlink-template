@@ -17,8 +17,8 @@
 </script>
 
 <section id="main">
-  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post" id="ARForm"
-    enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
+  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post"
+    id="MessageExerciceForm" enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
     <input name="TemplateVersion" type="hidden" id="TemplateVersion" value="{{version}}" />
     {{> message-standard}}
   </form>

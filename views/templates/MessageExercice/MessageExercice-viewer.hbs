@@ -46,6 +46,9 @@
     <div class="form-group">
       <label for="Dem_Rep">Accusé de réception demandé</label>
       <span id="Dem_Rep" class="value-text">{var Dem_Rep}</span>
+      <script>
+        document.getElementById("Dem_Rep").innerHTML = document.getElementById("Dem_Rep").innerHTML === "Oui" ? "OUI" : "NON";
+      </script>
     </div>
   </div>
 

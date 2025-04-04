@@ -2,16 +2,16 @@
   {
     "title": "Accusé de réception",
     "name": "AR",
-    "version": "2.1.35"
+    "version": "2.1.39"
   },
   {
     "title": "Message Exercice",
     "name": "MessageExercice",
-    "version": "6.0.5"
+    "version": "6.0.9"
   },
   {
     "title": "Rapport de situation",
     "name": "Situation",
-    "version": "1.0.29"
+    "version": "1.0.33"
   }
 ]
