@@ -1,6 +1,6 @@
 {{#contentFor "body"}}
 
-<p class="info">Ce formulaire permet d'envoyer un <b>message d'exercice</b>.</p>
+<p class="info">Ce formulaire permet d'envoyer un <b>message par Winlink.</b>.</p>
 
 <p class="warning">En cours d'écriture...</p>
 
@@ -10,6 +10,8 @@
   <!-- <li>Remplissez tous les champs obligatoires marqués d'un astérisque (*)</li> -->
   <li>Assurez-vous que les informations sont exactes et à jour</li>
   <li>Vérifiez vos données avant de soumettre le formulaire</li>
+  <li>La <a href="#indicatifs">liste des indicatifs</a> par zone est disponible en bas de cette page.</li>
+  <li>Lorsque vous cliquez sur le bouton "Envoyer", les données sont envoyées vers l'application Winlink.</li>
 </ul>
 
 <h4>Champs spécifiques :</h4>
@@ -24,11 +26,7 @@
   </li>
 
   <li><strong>Niveau de confidentialité</strong><br>
-    Le niveau de confidentialité du message.
-    <ul>
-      <li>DR <i>(D.... R...)</i></li>
-      <li>Normal</li>
-    </ul>
+    {{> help/fields/confidentialite-help}}
   </li>
 
   <li><strong>Date & Heure</strong><br>
@@ -36,9 +34,12 @@
     <i>Le bouton permet de changer le format de l'heure en UTC ou locale.</i>
   </li>
 
+  <li><strong>Demande de l'accusé de reception</strong><br>
+    <i>A cocher si vous demandez un accusé de reception.</i>
+  </li>
+
   <li><strong>Indicatif de la station</strong><br>
-    L'indicatif de la station qui envoie le message.<br>
-    <i>C'est l'indicatif configuré dans Winlink. Ce champ se rempli automatiquement.</i>
+    {{> help/fields/indicatif-station-help}}
   </li>
 
   <li><strong>Indicatif de l'opérateur</strong><br>
@@ -46,18 +47,20 @@
   </li>
 
   <li><strong>Autorité origine</strong><br>
-    L'autorité qui a émis le message. <br>
-    <i>Ex: Cézoc SUD, COGIC, Préfecture, etc...</i>
-  </li>
-
-  <li><strong>Autorités destinataires</strong><br>
-    La ou les autorités qui doivent recevoir le message. <br>
-    <i>Ex: Cézoc SUD, COGIC, Préfecture, etc...</i>
+    L'autorité qui émet le message. <br>
+    <i>Ex: COGIC, COD, COZ, etc...</i>
   </li>
 
   <li><strong>Indicatifs du/des destinataire(s)</strong><br>
-    Indicatif(s) du ou des destinataires du message.
-    <i>C'est les indicatifs du ou des destinataires présents ou des organismes représentés (COD - COZ - COGIC)</i>
+    Indicatif(s) du ou des destinataires du message.<br>
+    <i>Ce sont les indicatifs du ou des destinataires présents ou des organismes représentés (COD - COZ - COGIC)<br>
+      Les indicatifs doivent être séparés par des ";"<br>
+      Ex : F6PCT;F8KFG;F8KIA</i>
+  </li>
+
+  <li><strong>Autorités destinataires</strong><br>
+    La ou les autorités recevoir le message. <br>
+    <i>Ex: COGIC, COD, COZ, etc...</i>
   </li>
 
   <li><strong>Sujet</strong><br>
@@ -70,7 +73,8 @@
   </li>
 </ul>
 
-<p class="info">Le bouton envoyer permet d'envoyer les données du formulaire dans le message Winlink associé.</p>
+<p class="info">Le bouton envoyer permet d'envoyer les données du formulaire dans le message ouvert de l'application
+  Winlink.</p>
 <p>&nbsp;</p>
 <p class="note">Pour toute question supplémentaire, veuillez contacter l'administrateur FNRASEC.</p>
 

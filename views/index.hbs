@@ -1,24 +1,17 @@
 <section id="main">
 
-  <h1>FNRASEC Winlink Templates</h1>
 
-  {{> nav}}
-
-  <h2>Templates</h2>
-
+  {{#each templates}}
+  <h2>{{this.title}}</h2>
   <ul>
     <li>
-      <a href="/FNRASEC_MessageExercice_Initial" class="form-link">Message Exercice (Initial)</a>
+      <a href="/FNRASEC_{{this.name}}_Initial" class="form-link">Formulaire de saisie</a>
     </li>
     <li>
-      <a href="/FNRASEC_MessageExercice_Viewer" class="form-link">Message Exercice (Viewer)</a>
-    </li>
-    <li>
-      <a href="/FNRASEC_AR_Initial" class="form-link">Accusé de Réception (Initial)</a>
-    </li>
-    <li>
-      <a href="/FNRASEC_AR_Viewer" class="form-link">Accusé de Réception (Viewer)</a>
+      <a href="/FNRASEC_{{this.name}}_Viewer" class="form-link">Formulaire de visualisation</a>
     </li>
   </ul>
+
+  {{/each}}
 
 </section>
