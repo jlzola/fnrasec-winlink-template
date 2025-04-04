@@ -80,7 +80,9 @@ Distribué sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 - Jean-Louis Zola - [https://jlz.free.fr](https://jlz.free.fr) - jlz@free.fr
 
+- F1COB Jean-Michel - [https://qrz.com/db/f1cob](https://qrz.com/db/f1cob) 
 - F4IXH Jean-Louis - [https://qrz.com/db/f4ixh](https://qrz.com/db/f4ixh)
+
 - [FNRASEC Winlink Templates](https://github.com/jlzola/fnrasec-winlink-template)
 
 
