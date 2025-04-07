@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import { existsSync, copyFileSync } from 'fs';
+import { existsSync, copyFileSync, mkdirSync } from 'fs';
 import templatesService from '../controllers/templates.js';
 import dotenv from 'dotenv';
 
@@ -15,6 +15,12 @@ try {
 
   console.log('Pensez à lancer le serveur local avec la commande : "npm start &" avant de lancer le build. (puis fg pour remttre le processus en avant plan)');
   console.log('Building...');
+
+  // Vérifier si le répertoire cible existe, sinon le créer
+  if (!existsSync(distDir)) {
+    mkdirSync(distDir, { recursive: true });
+    console.log(`dist/ folder created : ${distDir}`);
+  }
 
   // Récupérer les templates
   const templates = templatesService.getTemplates();

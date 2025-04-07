@@ -27,7 +27,6 @@ LEs modèles de formulaire FNRAEC pour Winlink + VARA.
 
 - Node.js v22.14.0
 - inliner 1.13.1 : pour la construction d'une page html sans dépendance : pas d'image ni aucun autre fichier. tout est inclus dans le fichir html.   Voir http://github.com/remy/inliner/
-- npm
 - dotenv
 - express
 - express-handlebars
@@ -42,36 +41,56 @@ git clone https://github.com/jlzola/fnrasec-winlink-template.git
 # Installer les dépendances
 npm install
 
+# installer inliner
+npm install -g inliner
+
 # Lancer le serveur
 npm start
 ```
 
 ## 💻 Utilisation
 
+> ⚠️ ATTENTION : Pensez à lancer l'application avant d'exécuter la commande.
+
 ```bash
 # Build avec inliner
 npm run build
 
 # Deploiement 
+# Permet de copier les fichiers de ./dist vers C:\RMS Express\Global Folders\Templates\FNRASEC_TEST\
 npm run deploy
-Permet de copier les fichiers de ./dist vers C:\RMS Express\Global Folders\Templates\FNRASEC_TEST\
-
-
 ```
 
 ## 📂 Structure du Projet
 
 ```
-todo
+/fnrasec-winlink-template
+├───config
+├───controllers
+├───dist
+├───models
+├───node_modules
+├───public
+│   ├───css
+│   ├───img
+│   └───js
+├───routes
+├───src
+└───views
+    ├───errors
+    ├───layouts
+    ├───partials
+    └───templates
 ```
 
 ## 🤝 Contribuer
 
-1. Forker le projet
+1. Cloner le projet
 2. Créer une branche (`git checkout -b feature/ma-nouvelle-fonctionnalité`)
 3. Committer les changements (`git commit -am 'Ajout d'une super fonctionnalité'`)
 4. Pousser la branche (`git push origin feature/ma-nouvelle-fonctionnalité`)
 5. Ouvrir une Pull Request
+
 
 ## 📄 Licence
 
@@ -79,11 +98,7 @@ Distribué sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 📧 Contact
 
-- Jean-Louis Zola - [https://jlz.free.fr](https://jlz.free.fr) - jlz@free.fr
-
 - F1COB Jean-Michel - [https://qrz.com/db/f1cob](https://qrz.com/db/f1cob) 
 - F4IXH Jean-Louis - [https://qrz.com/db/f4ixh](https://qrz.com/db/f4ixh)
-
-- [FNRASEC Winlink Templates](https://github.com/jlzola/fnrasec-winlink-template)
 
 
