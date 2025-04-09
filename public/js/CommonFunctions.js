@@ -130,7 +130,8 @@ function setacc(str2conv) {
 	chaine_dest = chaine_dest.replace(/'¢/g, "●"); // Coche dans carré
 	chaine_dest = chaine_dest.replace(/'¢/g, " "); // Croix dans carré
 
-	chaine_dest = chaine_dest.replace(/Ã/g, "à"); // a accent aigu
+	// chaine_dest = chaine_dest.replace(/Ã/g, "à"); // a accent aigu
+	chaine_dest = chaine_dest.replace(/Ã&nbsp;/g, "à"); // a accent aigu
 
 	return chaine_dest;
 }

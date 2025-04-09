@@ -2,7 +2,7 @@
 SeqInc:
 To: <var vTo> 
 Message N°: <var BullNr>
-Subject: [<var Priority>] Msg# <var SeqNum> From <var vTo>, <var DateTime> <var vSubject>
+Subject: [<var Priority>][<var vLieu>/<var SeqNum>] <var vSubject>
 -------------------------------------------------------------------------------------------  	
 ActivityType: <var vActivityType>
 -------------------------------------------------------------------------------------------

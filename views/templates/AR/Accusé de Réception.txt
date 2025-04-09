@@ -2,7 +2,7 @@ Form: FNRASEC_AR_Initial.html,FNRASEC_AR_Viewer.html
 SeqInc:
 To: <var vTo> 
 Message N°: <var BullNr>
-Subject: [AR] <var vLieu>/<var SeqNum> from <var vTo>, <var DateTime> / <var vSubject>
+Subject: [AR][<var vLieu>/<var SeqNum>] <var vSubject>
 -------------------------------------------------------------------------------------------
 Point de Situation:<var vNumber>
 1. Message: <var vLieu> <var SeqNum>
