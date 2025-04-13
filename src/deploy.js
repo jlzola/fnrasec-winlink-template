@@ -13,13 +13,22 @@ try {
     console.log(`Created target directory: ${targetDir}`);
   }
 
+  // Supprimer tous les fichiers txt du dossier cible
+  const txtFiles = readdirSync(targetDir).filter(file => file.endsWith('.txt'));
+  txtFiles.forEach(file => {
+    const filePath = join(targetDir, file);
+    unlinkSync(filePath);
+    console.log(`Supprimé: ${filePath}`);
+  });
+   
+
   // Lire les fichiers dans le répertoire source
   const files = readdirSync(sourceDir, { withFileTypes: true });
 
   files.forEach(file => {
     if (file.isFile()) {
       const sourcePath = join(sourceDir, file.name);
-      const targetPath = join(targetDir, file.name);
+      const targetPath = join(targetDir, file.name);      
 
       copyFileSync(sourcePath, targetPath);
       console.log(`Copied ${file.name} to ${targetPath}`);

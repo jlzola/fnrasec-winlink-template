@@ -1,4 +1,5 @@
 ﻿Form: FNRASEC_MessageCommandement_Initial.html, FNRASEC_MessageCommandement_Viewer.html
+ReplyTemplate: {{ReplyTemplate}}
 SeqInc:
 To: <var vTo> 
 Message N°: <var BullNr>

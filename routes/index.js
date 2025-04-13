@@ -69,7 +69,7 @@ router.get('/FNRASEC_MessageExercice_Initial', (req, res) => {
 router.get('/FNRASEC_MessageExercice_Viewer', (req, res) => {
 
   // récupère les informations du template MessageExercice 
-  const template = templatesService.getTemplateInfo('MessageExercice');
+  const template = templatesService.getTemplateInfo('MessageExercice');  
 
   // affiche le template AR_Viewer
   res.render(`templates/${template.name}/${template.files.viewer}`, {
