@@ -2,16 +2,16 @@
   {
     "title": "Message Exercice",
     "name": "MessageExercice",
-    "version": "6.0.46"
+    "version": "6.0.51"
   },
   {
     "title": "Message de commandement",
     "name": "MessageCommandement",
-    "version": "1.0.35"
+    "version": "1.0.40"
   },
   {
     "title": "Accusé de réception",
     "name": "AR",
-    "version": "2.1.75"
+    "version": "2.1.80"
   }
 ]

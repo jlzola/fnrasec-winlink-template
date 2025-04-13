@@ -35,7 +35,7 @@ try {
     template = templatesService.incrementBuildVersion(template.name);
 
     if (template.name == "AR")
-      replyTemplateName = template.files.txt;
+      replyTemplateName = `FNRASEC ${template.title} ${template.version}.txt`;
 
     // afficher le nom du template et la version
     console.log(`Build template "${template.name}" version : ${template.version}\n`);

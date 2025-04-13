@@ -1,4 +1,4 @@
-import { readdirSync, copyFileSync, mkdirSync, existsSync } from 'fs';
+import { readdirSync, copyFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
 import { join } from 'path';
 
 const sourceDir = './dist';
@@ -15,12 +15,13 @@ try {
 
   // Supprimer tous les fichiers txt du dossier cible
   const txtFiles = readdirSync(targetDir).filter(file => file.endsWith('.txt'));
+  console.log(txtFiles);
   txtFiles.forEach(file => {
     const filePath = join(targetDir, file);
     unlinkSync(filePath);
     console.log(`Supprimé: ${filePath}`);
   });
-   
+
 
   // Lire les fichiers dans le répertoire source
   const files = readdirSync(sourceDir, { withFileTypes: true });
@@ -28,7 +29,7 @@ try {
   files.forEach(file => {
     if (file.isFile()) {
       const sourcePath = join(sourceDir, file.name);
-      const targetPath = join(targetDir, file.name);      
+      const targetPath = join(targetDir, file.name);
 
       copyFileSync(sourcePath, targetPath);
       console.log(`Copied ${file.name} to ${targetPath}`);
