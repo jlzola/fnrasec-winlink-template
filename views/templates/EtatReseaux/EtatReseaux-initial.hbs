@@ -1,0 +1,189 @@
+<script>
+  function init() {
+    // 
+    // Event pour l'affichage du panel d'aide
+    document.getElementById('help-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.getElementById('help-panel').classList.add('active');
+    });
+    document.getElementById('close-btn').addEventListener('click', function () {
+      document.getElementById('help-panel').classList.remove('active');
+    });
+
+    // 
+    // Initialise la date et l'heure 
+    SetDateToUTC();
+  }
+
+  function ConfigEventOther(TypeEvt) {
+    var ZoneOther = document.getElementById("vOther");
+    if (TypeEvt == "Autre") {
+      ZoneOther.readOnly = false;
+      ZoneOther.style.backgroundColor = "white";
+      ZoneOther.placeholder = "Veuillez renseigner la nature de l'évènement";
+      ZoneOther.required = true;
+    }
+    else {
+      ZoneOther.readOnly = true;
+      ZoneOther.style.backgroundColor = "#eee";
+      ZoneOther.placeholder = "";
+      ZoneOther.required = false;
+      ZoneOther.value = "";
+    }
+  }  
+</script>
+
+<section id="main">
+  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post"
+    id="{{name}}Form" enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
+
+    {{> message-standard-header-form}}
+
+    <div class="grid-container2">
+      <div class="form-group">
+        <label for="vEvent">Evènement</label>
+        <select name="vEvent" id="vEvent" required onchange="ConfigEventOther(this.value)">
+          <option value=" -  "> - </option>
+          <option value="Ouragan">Ouragan </option>
+          <option value="Tempête tropicale">Tempête tropicale </option>
+          <option value="Tornade/Vents violents">Tornade/Vents violents </option>
+          <option value="Inondation">Inondation </option>
+          <option value="Tremblement de Terre">Tremblement de Terre </option>
+          <option value="Feux">Feux </option>
+          <option value="Raz de Marée">Raz de Marée </option>
+          <option value="Autre">Autre </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="vOther">Autre</label>
+        <input name="vOther" id="vOther" title="Autre évènement" placeholder="" style="background-color: #eee;" readonly
+          maxlength="50">
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="Lieu_Inc">Lieu de l'évènement</label>
+        <textarea id="Lieu_Inc" name="Lieu_Inc" title="Lieu de l'évènement"
+          placeholder="Lieu de l'évènement (décrivez précisément)" rows="1" required
+          onkeyup="AutoGrowTextArea(this);"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vSituation">Situation</label>
+        <textarea name="vSituation" placeholder="Décrire la situation le plus concisement possible" rows="6" cols="110"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Description de l'état des réseaux routiers et fluides</h3>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vRoute">Reste-t-il des accès routiers carrossables à la zone ?</label>
+        <select id="vRoute" name="vRoute" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non" selected="selected">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+        </select>
+        <textarea id="vComRoute" name="vComRoute" placeholder="Donner le maximum de précision sur les accès possibles."
+          rows="2" onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vRouteTT">Reste-t-il des accès routiers tous terrains à la zone ?</label>
+        <select id="vRouteTT" name="vRouteTT" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non" selected="selected">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+        </select>
+        <textarea id="vComRouteTT" name="vComRouteTT"
+          placeholder="Donner le maximum de précision sur les accès possibles." rows="2"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vElec">Electricité coupée ?</label>
+        <select id="vElec" name="vElec" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non" selected="selected">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+        </select>
+        <textarea id="vComElec" name="vComElec" placeholder="Donner le maximum de précision." rows="2"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vGaz">Réseau de gaz coupé ?</label>
+        <select id="vGaz" name="vGaz" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+          <option value="Sans objet" selected="selected">Sans objet</option>
+        </select>
+        <textarea id="vComGaz" name="vComGaz" placeholder="Donner le maximum de précision." rows="2"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vEau">Eau coupée ?</label>
+        <select id="vEau" name="vEau" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non" selected="selected">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+        </select>
+        <textarea id="vComEau" name="vComEau" placeholder="Donner le maximum de précision." rows="2"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vEauPotable">Eau potable coupée ?</label>
+        <select id="vEauPotable" name="vEauPotable" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non" selected="selected">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+        </select>
+        <textarea id="vComEauPotable" name="vComEauPotable" placeholder="Donner le maximum de précision." rows="2"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="form-group">
+        <label for="vCommunication">Réseaux de communication coupés ?</label>
+        <select id="vCommunication" name="vCommunication" style="max-width: 100px; margin-bottom: 5px;">
+          <option value="Non" selected="selected">Non</option>
+          <option value="Oui">Oui</option>
+          <option value="Partiel">Partiel</option>
+        </select>
+        <textarea id="vComCommunication" name="vComCommunication"
+          placeholder="Donner le maximum de précisions (Téléphonie fixe & mobile, Internet, TNT, ...)" rows="2"
+          onkeyup="AutoGrowTextArea(this)"></textarea>
+      </div>
+    </div>
+
+
+    <div class="form-group button">
+      <button type="submit">Envoyer</button>
+    </div>
+
+
+  </form>
+</section>
+
+{{> help/message-standard-help}}

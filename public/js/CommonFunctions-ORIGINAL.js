@@ -101,6 +101,7 @@ function ConfigEventOther(TypeEvt) {
 		ZoneOther.required = false;
 	}
 }
+
 //======================================================================================
 // Agrandissement automatique des zones de saisie
 //======================================================================================	

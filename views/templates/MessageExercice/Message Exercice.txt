@@ -2,33 +2,38 @@
 ReplyTemplate: {{ReplyTemplate}}
 SeqInc:
 To: <var vTo> 
-Message N°: <var BullNr>
 Subject: [<var Priority>][<var vLieu>/<var SeqNum>] <var vSubject>
--------------------------------------------------------------------------------------------  	
-ActivityType: <var vActivityType>
--------------------------------------------------------------------------------------------
-Message N°:<var vLieu> <var SeqNum>
-Station d'Origine: <var vOrig>
-Call Station: <var msgSender>
-Opérateur: <var vOper>
-Origine Message: <var vOrigine>
-Call Destinataire: <var vDest>
-Destination Message: <var vDestination>
+Msg:
+------------------------------------------------------------------------
+-- MESSAGE EXERCICE 
+------------------------------------------------------------------------
 
-Participants: <var vTo>
-Date/Heure: <var DateTime>
+
+Message N°: <var vLieu>/<var SeqNum>
 Priorité: <var Priority>
+Confidentialité: <var vConfid>
+
+Date/Heure: <var DateTime>
+Demande AR: <var Dem_Rep>
+Indicatif de la station: <var msgSender>
+
+------------------------------------------------------------------------
+
+Indicatif Opérateur: <var vOper>
+Autorité origine: <var vOrigine>
+
+Destinataire(s): <var vTo>
+Autorité(s) destinataire : <var vDestination>
+
+------------------------------------------------------------------------
+
 Sujet: <var vSubject>
-Demande Réponse: <var Dem_Rep>
+
 Message: <var vMessage>
 
-------------------------------------
+
+
+------------------------------------------------------------------------
 Express Sending Station: <MsgSender>
 Express Version: <ProgramVersion>
 Template Version: <var Templateversion>
-
-
-
-
-
-

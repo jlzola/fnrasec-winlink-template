@@ -20,7 +20,11 @@ a:hover {
 }
 
 hr {
+  margin-top: 18px;
   margin-bottom: 18px;
+  height: 0px;
+  background-color: orange;
+  border: none;
 }
 
 /* input[type="checkbox"] {
@@ -149,7 +153,8 @@ hr {
   outline: none;
 }
 
-.form-group input.bg-yellow  {
+.form-group input.bg-yellow, 
+.form-group select.bg-yellow {
   background-color: lightyellow;
 }
 

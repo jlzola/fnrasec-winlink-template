@@ -69,7 +69,7 @@ router.get('/FNRASEC_MessageExercice_Initial', (req, res) => {
 router.get('/FNRASEC_MessageExercice_Viewer', (req, res) => {
 
   // récupère les informations du template MessageExercice 
-  const template = templatesService.getTemplateInfo('MessageExercice');  
+  const template = templatesService.getTemplateInfo('MessageExercice');
 
   // affiche le template AR_Viewer
   res.render(`templates/${template.name}/${template.files.viewer}`, {
@@ -103,6 +103,36 @@ router.get('/FNRASEC_MessageCommandement_Viewer', (req, res) => {
     ...template
   });
 });
+
+
+// @desc   EtatReseaux_Initial
+// @route   GET /FNRASEC_EtatReseaux_Initial
+router.get('/FNRASEC_EtatReseaux_Initial', (req, res) => {
+
+  // récupère les informations du template EtatReseaux 
+  const template = templatesService.getTemplateInfo('EtatReseaux');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.initial}`, {
+    ...template,
+    help: "yes"
+  });
+});
+
+// @desc   EtatReseaux_Viewer
+// @route   GET /FNRASEC_EtatReseaux_Viewer
+router.get('/FNRASEC_EtatReseaux_Viewer', (req, res) => {
+
+  // récupère les informations du template EtatReseaux 
+  const template = templatesService.getTemplateInfo('EtatReseaux');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.viewer}`, {
+    ...template
+  });
+});
+
+
 
 // @desc    About
 // @route   GET /about

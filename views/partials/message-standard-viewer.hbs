@@ -15,77 +15,8 @@
 
 <section id="main">
 
-  <div class="grid-container3">
-    <!-- <div class="form-group">
-      <label for="vNumber">Numéro AR</label>
-      <span id="vNumber" class="code-block">{var vNumber}</span>
-    </div> -->
+  {{> message-standard-header-viewer}}
 
-    <div class="form-group">
-      <label for="vLieu">Message N°</label>
-      <span id="vLieu" class="code-block">{var vLieu}/{var SeqNum}</span>
-    </div>
-
-    <div class="form-group">
-      <label>Priorité</label>
-      <span id="Priority" class="code-block">{var Priority}</span>
-    </div>
-
-    <div class="form-group">
-      <label>Niveau de confidentialité</label>
-      <span id="vConfid" class="code-block">{var vConfid}</span>
-    </div>
-  </div>
-
-  <div class="grid-container3">
-    <div class="form-group">
-      <label for="DateTime">Date & Heure</label>
-      <span id="DateTime" class="code-block">{var DateTime}</span>
-    </div>
-
-    <div class="form-group">
-      <label for="Dem_Rep">Accusé de réception demandé</label>
-      <span id="Dem_Rep" class="code-block">{var Dem_Rep}</span>
-      <script>
-        document.getElementById("Dem_Rep").innerHTML = document.getElementById("Dem_Rep").innerHTML === "Oui" ? "OUI" : "NON";
-      </script>
-    </div>
-
-    <div class="form-group">
-      <label for="msgSender">Indicatif de la station</label>
-      <span id="vSender" class="code-block">{var msgSender}</span>
-    </div>
-
-  </div>
-
-  <hr>
-
-  <div class="grid-container3">
-    <div class="form-group">
-      <label for="vOper">Indicatif de l'opérateur</label>
-      <span id="vOper" class="code-block">{var vOper}</span>
-    </div>
-    <div class="form-group">
-      <label for="vOrigine">Autorité origine</label>
-      <span id="vOrigine" class="code-block">{var vOrigine}</span>
-    </div>
-  </div>
-
-  <div class="grid-container">
-    <div class="form-group">
-      <label for="vTo">Indicatif(s) du/des destinataire(s)</label>
-      <span id="vTo" class="code-block">{var vTo}</span>
-    </div>
-  </div>
-
-  <div class="grid-container">
-    <div class="form-group">
-      <label for="vDestination">Autorités destinataires</label>
-      <span id="vDestination" class="code-block">{var vDestination}</span>
-    </div>
-  </div>
-
-  <hr>
 
   <div class="grid-container">
     <div class="form-group">
