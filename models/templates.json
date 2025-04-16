@@ -2,16 +2,21 @@
   {
     "title": "Message Exercice",
     "name": "MessageExercice",
-    "version": "6.0.14"
+    "version": "25.4.4"
   },
   {
     "title": "Message de commandement",
     "name": "MessageCommandement",
-    "version": "1.0.4"
+    "version": "25.4.4"
+  },
+  {
+    "title": "Etat des réseaux",
+    "name": "EtatReseaux",
+    "version": "25.4.4"
   },
   {
     "title": "Accusé de réception",
     "name": "AR",
-    "version": "2.1.44"
+    "version": "25.4.4"
   }
 ]

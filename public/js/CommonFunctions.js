@@ -117,12 +117,6 @@ function setacc(str2conv) {
 	chaine_dest = chaine_dest.replace(/Â°/g, "°"); // Symbole Paragraphe
 	chaine_dest = chaine_dest.replace(/Â/g, ""); // Espace
 
-	// Traiter les caractères spéciaux unique en dernier
-	chaine_dest = chaine_dest.replace(/\?/g, "");
-	chaine_dest = chaine_dest.replace(/â€/g, "'");
-	chaine_dest = chaine_dest.replace(/â¢/g, "➢"); // Windgdings 0xD8
-	chaine_dest = chaine_dest.replace(/â¬/g, "€"); // €
-
 	// Table Wingdings
 	chaine_dest = chaine_dest.replace(/'¢/g, "●"); // Disque noir
 	chaine_dest = chaine_dest.replace(/'¢/g, "○"); // Disque blanc
@@ -130,9 +124,47 @@ function setacc(str2conv) {
 	chaine_dest = chaine_dest.replace(/'¢/g, "●"); // Coche dans carré
 	chaine_dest = chaine_dest.replace(/'¢/g, " "); // Croix dans carré
 
-	chaine_dest = chaine_dest.replace(/Ã/g, "à"); // a accent aigu
+	// ajout de &nbsp; pour remplacer par 'à' car cela provoquer un espace supplémentaire.
+	// chaine_dest = chaine_dest.replace(/Ã/g, "à"); // a accent grave 
+	chaine_dest = chaine_dest.replace(/Ã&nbsp;/g, "à"); // a accent grave 
+
+
+	// 
+	// Tentative de remplacement des Majuscule avec accet 
+	// mais ca ne fonctionne pas :o(
+
+	// Traitement des "A"
+	chaine_dest = chaine_dest.replace(/Ã‚/g, "Â"); // A accent circonflexe
+	chaine_dest = chaine_dest.replace(/Ã„/g, "Ä"); // A tréma
+
+	// Traitement des "E"
+	chaine_dest = chaine_dest.replace(/Ã‰/g, "É"); // E accent aigu                  
+	chaine_dest = chaine_dest.replace(/Ã‰/g, "É"); // É Majuscule  accent aigu 
+	chaine_dest = chaine_dest.replace(/Ãˆ/g, "È"); // E accent grave
+	chaine_dest = chaine_dest.replace(/ÃŠ/g, "Ê"); // E accent circonflexe
+	chaine_dest = chaine_dest.replace(/Ã‹/g, "Ë"); // E tréma
+
+	// Traitement des "I"
+	chaine_dest = chaine_dest.replace(/ÃŽ/g, "Î"); // I accent circonflexe
+	chaine_dest = chaine_dest.replace(/Ã/g, "Ï"); // I tréma
+
+	// Traitement des "O"
+	chaine_dest = chaine_dest.replace(/Ã”/g, "Ô"); // O accent circonflexe
+	chaine_dest = chaine_dest.replace(/Ã–/g, "Ö"); // O tréma
+
+	// Traitement des "U"
+	chaine_dest = chaine_dest.replace(/Ã™/g, "Ù"); // U accent grave
+	chaine_dest = chaine_dest.replace(/Ã›/g, "Û"); // U accent circonflexe
+	chaine_dest = chaine_dest.replace(/Ãœ/g, "Ü"); // U tréma
+
+
+
+	// Traiter les caractères spéciaux unique en dernier
+	chaine_dest = chaine_dest.replace(/\?/g, "");
+	chaine_dest = chaine_dest.replace(/â€/g, "'");
+	chaine_dest = chaine_dest.replace(/â¢/g, "➢"); // Windgdings 0xD8
+	chaine_dest = chaine_dest.replace(/â¬/g, "€"); // €
+
 
 	return chaine_dest;
 }
-
-

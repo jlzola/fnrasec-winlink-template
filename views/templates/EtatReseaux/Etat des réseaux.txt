@@ -1,0 +1,71 @@
+﻿Form: FNRASEC_EtatReseaux_Initial.html, FNRASEC_EtatReseaux_Viewer.html
+ReplyTemplate: {{ReplyTemplate}}
+SeqInc:
+To: <var vTo> 
+Subject: [<var Priority>][<var vLieu>/<var SeqNum>] ETAT DES RESEAUX - <var vSubject>
+Msg:
+------------------------------------------------------------------------
+-- ETAT DES RESEAUX 
+------------------------------------------------------------------------
+
+Message N°: <var vLieu>/<var SeqNum>
+Priorité: <var Priority>
+Confidentialité: <var vConfid>
+
+Date/Heure: <var DateTime>
+Demande AR: <var Dem_Rep>
+Indicatif de la station: <var msgSender>
+
+------------------------------------------------------------------------
+
+Indicatif Opérateur: <var vOper>
+Autorité origine: <var vOrigine>
+
+Destinataire(s): <var vTo>
+Autorité(s) destinataire : <var vDestination>
+
+------------------------------------------------------------------------
+
+Evènement : <var vEvent> / <var vOther>
+Lieu de l'évènement : <var Lieu_Inc>
+
+Situation :
+<var vSituation>
+
+------------------------------------------------------------------------
+
+Description de l'état des réseaux routiers et fluides
+
+
+Reste-t-il des accès routiers carrossables à la zone ? 
+<var vRoute>
+<var vComRoute>
+
+Reste-t-il des accès routiers tous terrains à la zone ? 
+<var vRouteTT>
+<var vComRouteTT>
+
+Electricité coupée ?<
+<var vElec>
+<var vComElec>
+
+Réseau de gaz coupé ?
+<var Gaz>
+<var vComGaz>
+
+Eau coupée ?
+<var vEau>
+<var vComEau>
+
+Eau potable coupée ?
+<var vEauPotable>
+<var vComEauPotable>
+
+Réseaux de communication coupés ?
+<var vCommunication>
+<var vComCommunication>
+
+------------------------------------------------------------------------
+Express Sending Station: <MsgSender>
+Express Version: <ProgramVersion>
+Template Version: <var Templateversion>

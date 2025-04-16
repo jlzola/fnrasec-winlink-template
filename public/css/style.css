@@ -20,7 +20,11 @@ a:hover {
 }
 
 hr {
+  margin-top: 18px;
   margin-bottom: 18px;
+  height: 0px;
+  background-color: orange;
+  border: none;
 }
 
 /* input[type="checkbox"] {
@@ -149,7 +153,8 @@ hr {
   outline: none;
 }
 
-.form-group input.bg-yellow  {
+.form-group input.bg-yellow, 
+.form-group select.bg-yellow {
   background-color: lightyellow;
 }
 
@@ -329,4 +334,27 @@ hr {
   color: #3c763d;
   padding: 1rem;
   margin: 1rem 0;
+}
+
+.code-block {
+  /* background-color: #f5f5f5; */
+  /* border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px; */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  /* color: #007bff; */
+  color: #333;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  /* Permet les retours à la ligne */
+  word-wrap: break-word;
+  /* Gère les mots longs */
+  width: 100%;
+  /* Largeur maximale */
+  width: 100%;
+  /* Largeur fluide */
+  box-sizing: border-box;
+  /* Inclut le padding et la bordure dans la largeur */
 }

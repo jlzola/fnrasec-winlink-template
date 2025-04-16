@@ -1,0 +1,115 @@
+<script>
+  function init() {
+    setAccents();
+  }
+
+  function setAccents() {
+    document.getElementById("vSender").innerHTML = setacc(document.getElementById("vSender").innerHTML);
+    document.getElementById("vOrigine").innerHTML = setacc(document.getElementById("vOrigine").innerHTML);
+    document.getElementById("vDestination").innerHTML = setacc(document.getElementById("vDestination").innerHTML);
+    document.getElementById("vEvent").innerHTML = setacc(document.getElementById("vEvent").innerHTML);
+    document.getElementById("vOther").innerHTML = setacc(document.getElementById("vOther").innerHTML);
+    document.getElementById("Lieu_Inc").innerHTML = setacc(document.getElementById("Lieu_Inc").innerHTML);
+    document.getElementById("vSituation").innerHTML = setacc(document.getElementById("vSituation").innerHTML);
+    document.getElementById("vRoute").innerHTML = setacc(document.getElementById("vRoute").innerHTML);
+    document.getElementById("vRouteTT").innerHTML = setacc(document.getElementById("vRouteTT").innerHTML);
+    document.getElementById("vElec").innerHTML = setacc(document.getElementById("vElec").innerHTML);
+    document.getElementById("vGaz").innerHTML = setacc(document.getElementById("vGaz").innerHTML);
+    document.getElementById("vEau").innerHTML = setacc(document.getElementById("vEau").innerHTML);
+    document.getElementById("vEauPotable").innerHTML = setacc(document.getElementById("vEauPotable").innerHTML);
+    document.getElementById("vCommunication").innerHTML = setacc(document.getElementById("vCommunication").innerHTML);
+  }
+</script>
+
+
+<section id="main">
+
+  {{> message-standard-header-viewer}}
+
+
+  <div class="grid-container3">
+    <div class="form-group">
+      <label for="vEvent">Evènement</label>
+      <span id="vEvent" class="code-block">{var vEvent}</span>
+    </div>
+
+    <div class="form-group">
+      <label for="vOther">Autre</label>
+      <pre id="vOther" class="code-block">{var vOther}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="Lieu_Inc">Lieu de l'évènement</label>
+      <pre id="Lieu_Inc" class="code-block">{var Lieu_Inc}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vSituation">Situation</label>
+      <pre id="vSituation" class="code-block">{var vSituation}</pre>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Description de l'état des réseaux routiers et fluides</h3>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vRoute">Reste-t-il des accès routiers carrossables à la zone ?</label>
+      <pre id="vRoute" class="code-block"><strong>{var vRoute}</strong><br>{var vComRoute}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vRouteTT">Reste-t-il des accès routiers tous terrains à la zone ?</label>
+      <pre id="vRouteTT" class="code-block"><strong>{var vRouteTT}</strong><br>{var vComRouteTT}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vElec">Electricité coupée ?</label>
+      <pre id="vElec" class="code-block"><strong>{var vElec}</strong><br>{var vComElec}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vGaz">Réseau de gaz coupé ?</label>
+      <pre id="vGaz" class="code-block"><strong>{var vGaz}</strong><br>{var vComGaz}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vEau">Eau coupée ?</label>
+      <pre id="vEau" class="code-block"><strong>{var vEau}</strong><br>{var vComEau}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vEauPotable">Eau potable coupée ?</label>
+      <pre id="vEauPotable" class="code-block"><strong>{var vEauPotable}</strong><br>{var vComEauPotable}</pre>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="form-group">
+      <label for="vCommunication">Réseaux de communication coupés ?</label>
+      <pre id="vCommunication" class="code-block"><strong>{var vCommunication}</strong><br>{var vComCommunication}</pre>
+    </div>
+  </div>
+
+
+  <!-- Bouton IMPRIMER -->
+  <div class="form-group button">
+    <button id="printPageButton" onclick="javascript:window.print()">Imprimer</button>
+  </div>
+
+</section>

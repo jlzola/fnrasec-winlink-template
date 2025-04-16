@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import { existsSync, copyFileSync, mkdirSync } from 'fs';
+import { existsSync, copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import templatesService from '../controllers/templates.js';
 import dotenv from 'dotenv';
 
@@ -26,12 +26,16 @@ try {
   const templates = templatesService.getTemplates();
   //  console.log(templates);
 
+  let replyTemplateName = "Unknow reply template";
 
   // pour chaque template, on va lire les fichiers
   templates.forEach(template => {
 
     // incrémenter la version
     template = templatesService.incrementBuildVersion(template.name);
+
+    if (template.name == "AR")
+      replyTemplateName = `FNRASEC ${template.title} ${template.version}.txt`;
 
     // afficher le nom du template et la version
     console.log(`Build template "${template.name}" version : ${template.version}\n`);
@@ -68,7 +72,7 @@ try {
     const txtFile = `${templatesDir}/${template.name}/${template.files.txt}`;
     const txtFileVersion = `${distDir}/FNRASEC ${template.title} ${template.version}.txt`;
     if (existsSync(txtFile)) {
-      console.log(`Copy ${txtFile} to ${txtFileVersion}`);
+      console.log(`>> Copy ${txtFile} to ${txtFileVersion}`);
       copyFileSync(txtFile, txtFileVersion);
       console.log(`${txtFileVersion} copied.`);
     } else {
@@ -77,7 +81,27 @@ try {
 
   });
 
-  console.log(`Builded.`);
+
+  // pour chaque fichier txt, on ajoute le replyTemplate
+  console.log('\nreplyTemplate replacement ...');
+
+  // Récupérer les templates
+  const templatesReply = templatesService.getTemplates();
+
+  templatesReply.forEach(template => {
+    if (template.name != "AR") {
+      // ouvre le fichier txtFileVersion, remplace  {{ReplyTemplate}}  par replyTemplateName  puis enregistre le fichier
+      const txtFileVersion = `${distDir}/FNRASEC ${template.title} ${template.version}.txt`;
+      console.log('  Replacement replyTemplate ' + txtFileVersion);
+
+      let content = readFileSync(txtFileVersion, 'utf8');
+      content = content.replace('{{ReplyTemplate}}', replyTemplateName);
+      writeFileSync(txtFileVersion, content);
+    }
+  });
+  console.log('replyTemplate end.');
+
+  console.log(`\nBuilded.`);
 
 } catch (error) {
   console.error(`Error processing files: ${error.message}`);

@@ -1,23 +1,12 @@
 {{#contentFor "body"}}
 
-<p class="info">Ce formulaire permet de créer un <b>accusé de réception</b> dans un nouveau message Winlink.</p>
+{{> help/instructions-generales}}
 
-<p class="warning">En cours d'écriture...</p>
-
-
-<h4>Instructions générales :</h4>
+<!-- L'entete de l'aide AR n'est pas standard -->
+<h4>Champs de l'entete :</h4>
 <ul>
-  <!-- <li>Remplissez tous les champs obligatoires marqués d'un astérisque (*)</li> -->
-  <li>Assurez-vous que les informations sont exactes et à jour</li>
-  <li>Vérifiez vos données avant de soumettre le formulaire</li>
-  <li>La <a href="#indicatifs">liste des indicatifs</a> par zone est disponible en bas de cette page.</li>
-  <li>Lorsque vous cliquez sur le bouton "Envoyer", les données sont envoyées vers l'application Winlink.</li>
-</ul>
-
-<h4>Champs spécifiques :</h4>
-<ul>
-  <li><strong>N° AR</strong><br>
-    Le numéro que vous souhaitez donner à votre accusé de réception.</li>
+  <!-- <li><strong>N° AR</strong><br>
+    Le numéro que vous souhaitez donner à votre accusé de réception.</li> -->
 
   <li><strong>N° Message</strong><br>
     {{> help/fields/numero-message-help}}
@@ -35,6 +24,7 @@
   <li><strong>Indicatif de la station</strong><br>
     {{> help/fields/indicatif-station-help}}
   </li>
+
 
 
   <li><strong>Indicatif de l'opérateur</strong><br>
@@ -55,10 +45,20 @@
   <li><strong>Indicatif du destinataire</strong><br>
     L'indicatif du radioamateur qui reçoit le message.</li>
 
+</ul>
 
+
+
+<!-- Les champs spécifiques à l'AR -->
+<h4>Champs spécifiques :</h4>
+
+<ul>
   <li><strong>Sujet</strong><br>
     Le sujet du message reçu. <br>
-    <i>Recopier ici le sujet et le numéro du message reçu, pour lequel vous emettez l'accusé de réception.</i>
+    <i>Recopier ici le sujet et le numéro du message reçu, pour lequel vous emettez l'accusé de réception. <br>
+      Ce champ se remplit automatiquement avec le sujet du message reçu lorsque vous faite une réponse via Winlink (Menu
+      Message/Reply)
+    </i>
   </li>
 
   <li><strong>Commentaire</strong><br>
@@ -67,9 +67,9 @@
   </li>
 </ul>
 
-<p class="info">Le bouton envoyer permet d'envoyer les données du formulaire dans le message Winlink associé.</p>
-<p>&nbsp;</p>
-<p class="note">Pour toute question supplémentaire, veuillez contacter l'administrateur FNRASEC.</p>
+
+
+{{> help/help-footer}}
 
 {{/contentFor}}
 
