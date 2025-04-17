@@ -1,18 +1,16 @@
 Form: FNRASEC_AR_Initial.html,FNRASEC_AR_Viewer.html
 SeqInc:
 To: <var vTo> 
-Subject: [AR][<var vLieu>/<var SeqNum>] <var vSubject>
+Subject: [AR/<var SeqNum>] <var vSubject>
 Msg:
 ------------------------------------------------------------------------
 -- ACCUSE DE RECEPTION 
 ------------------------------------------------------------------------
 
-Message N°: <var vLieu>/<var SeqNum>
-Priorité: <var Priority>
+Message N°: AR/<var SeqNum>
 Confidentialité: <var vConfid>
 
 Date/Heure: <var DateTime>
-Demande AR: <var Dem_Rep>
 Indicatif de la station: <var msgSender>
 
 ------------------------------------------------------------------------
@@ -20,14 +18,14 @@ Indicatif de la station: <var msgSender>
 Indicatif Opérateur: <var vOper>
 Autorité origine: <var vOrigine>
 
-Destinataire(s): <var vTo>
-Autorité(s) destinataire : <var vDestination>
+Destinataire: <var vTo>
+Autorité destinataire : <var vDestination>
 
 ------------------------------------------------------------------------
 
 Sujet: <var vSubject>
 
-Message: <var vMessage>
+Commentaire: <var vComment>
 
 
 ------------------------------------------------------------------------
