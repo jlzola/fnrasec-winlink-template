@@ -27,7 +27,6 @@ Sujet: <var vSubject>
 
 Commentaire: <var vComment>
 
-
 ------------------------------------------------------------------------
 Express Sending Station: <MsgSender>
 Express Version: <ProgramVersion>
