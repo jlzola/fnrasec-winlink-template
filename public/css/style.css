@@ -89,14 +89,17 @@ pre {
   
   @page {
     margin: 0; /* Supprime les marges par défaut */
+    /* Espace réservé pour le pied de page */    
+    /* margin-bottom: 50px;  */
   }
+
   body {
-    padding: 10px; /* Supprime le padding par défaut */
+    padding: 10px; 
   }
+
   .no-print, .no-print * {
     display: none !important; /* Cache les éléments avec la classe .no-print */
   }
-
 
   .container {
     background-color: transparent;
@@ -107,15 +110,25 @@ pre {
     max-width: none;
   }
   
-  #printPageButton, #projectLink {
+  #printPageButton {
     display: none;
   }
 }
 
 
 @media (max-width: 600px) {
+
   .grid-container, .grid-container2, .grid-container3 {
     grid-template-columns: 1fr;
+  }
+  
+  .header {
+    grid-template-columns: 1fr 3fr!important;
+  }
+
+  .header div.right {
+    display: none;
+    width: 0;
   }
 }
 
@@ -157,13 +170,9 @@ pre {
   width: auto;
   translate: 0 5px;
 }
-/* .header div.help {
-  text-align: right;
-} */
 
-/* .header span {
-  color: #007bff;
-} */
+
+
 
 /* form */ 
 
