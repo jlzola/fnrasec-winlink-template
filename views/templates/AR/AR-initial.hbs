@@ -19,6 +19,15 @@
     // 
     // Initialise la date et l'heure 
     SetDateToUTC();
+
+    // Initialise le numéro de l'AR
+    let msgNumber = '{MsgOriginalID}';
+    if (!msgNumber)
+      msgNumber = '{SeqNum}';
+
+    document.getElementById("SeqNum").value = msgNumber;
+    document.getElementById("vLieu").value = "AR";
+
   }
 </script>
 
@@ -36,7 +45,7 @@
             <option value="AR" selected>AR</option>
           </select>
           <input title="Vous pouvez écraser cette référence avec votre propre numérotation" name="SeqNum" id="SeqNum"
-            value="{SeqNum}" size="6" maxlength="6" style="color: red;  width: 80px;">
+            value="{SeqNum}" size="6" maxlength="20" style="color: red;  width: 180px;">
         </div>
       </div>
 
@@ -116,7 +125,7 @@
       </div>
     </div>
 
-    <hr>
+    <div class="spacer"></div>
 
     <div class="grid-container2">
       <div class="form-group">
@@ -147,8 +156,7 @@
       </div>
     </div>
 
-    <hr>
-
+    <div class="spacer"></div>
 
     <div class="grid-container">
       <div class="form-group">

@@ -20,12 +20,16 @@ a:hover {
 }
 
 hr {
-  margin-top: 18px;
-  margin-bottom: 18px;
-  height: 0px;
-  background-color: orange;
   border: none;
+  border-top-width: 1px;
+  border-top-color: #333;
+  border-top-style: dotted;
 }
+
+pre {
+  margin: 0;
+}
+
 
 /* input[type="checkbox"] {
   width: 20px; 
@@ -42,6 +46,11 @@ hr {
 
 
 /* container / main / grid / media */ 
+
+.spacer {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
 
 .container {
   background-color: #ffffff;
@@ -76,10 +85,50 @@ hr {
   gap: 1rem;
 }
 
+@media print {
+  
+  @page {
+    margin: 0; /* Supprime les marges par défaut */
+    /* Espace réservé pour le pied de page */    
+    /* margin-bottom: 50px;  */
+  }
+
+  body {
+    padding: 10px; 
+  }
+
+  .no-print, .no-print * {
+    display: none !important; /* Cache les éléments avec la classe .no-print */
+  }
+
+  .container {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+  }
+  
+  #printPageButton {
+    display: none;
+  }
+}
+
 
 @media (max-width: 600px) {
-  .grid-container, .grid-container3 {
+
+  .grid-container, .grid-container2, .grid-container3 {
     grid-template-columns: 1fr;
+  }
+  
+  .header {
+    grid-template-columns: 1fr 3fr!important;
+  }
+
+  .header div.right {
+    display: none;
+    width: 0;
   }
 }
 
@@ -87,9 +136,21 @@ hr {
 
 .header {
   text-align: left;
-  margin-bottom: 2rem;
+  margin-bottom: 1.3rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+.header div.left {
+  text-align: left;    
+}
+
+.header div.center {
+  text-align: center;    
+}
+
+.header div.right {
+  text-align: right;    
 }
 
 .header img {
@@ -100,16 +161,18 @@ hr {
 .header h1 {
   font-size: 1.5em;
   margin: 1.5em;
+  margin-bottom: 0.8rem;
   text-align: center;
 }
 
-.header div.help {
-  text-align: right;
+.header h1 img {
+  max-height: 25px;
+  width: auto;
+  translate: 0 5px;
 }
 
-.header span {
-  color: #007bff;
-}
+
+
 
 /* form */ 
 
@@ -258,10 +321,10 @@ hr {
 .help-panel {
   width: 30%;
   min-width: 300px;
-  
+  padding: 0;
+  margin: 0;  
   background-color: #f4f4f9;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.3s;
@@ -272,31 +335,61 @@ hr {
   z-index: 1000;
 }
 
+.help-container {
+  padding: 20px;
+}
+
 .help-panel.active {
   transform: translateX(0);
 }
 
-.help-panel .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
+div.help-content {
+  color: #333;
+  margin-top: 30px;
 }
 
-.help-panel .close-btn:hover {
-  background-color: #0056b3;
-}
-
-.help-panel img {
+.help-content img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
+
+.help-panel li {
+  margin-bottom: 10px;
+}
+
+.help-panel .info {
+  margin-top: 40px;
+  font-size: 1.0rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #666;
+}
+
+.help-panel .version {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #666;
+}
+
+.help-panel img#close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  max-height: 23px;
+  width: auto;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+
 
 .warning {
     background-color: #fff3cd;

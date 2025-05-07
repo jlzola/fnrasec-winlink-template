@@ -37,13 +37,19 @@ LEs modèles de formulaire FNRAEC pour Winlink + VARA.
 ```bash
 # Cloner le dépôt
 git clone https://github.com/jlzola/fnrasec-winlink-template.git
+```
 
+```bash
 # Installer les dépendances
 npm install
+```
 
+```bash
 # installer inliner
 npm install -g inliner
+```
 
+```bash
 # Lancer le serveur
 npm start
 ```

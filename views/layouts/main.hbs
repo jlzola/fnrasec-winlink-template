@@ -19,36 +19,30 @@
   <div class="container">
 
     <div class="header">
-      <img src="img/FNRASEC_Logo.png" alt="Logo FNRASEC">
-      <h1>{{title}}</h1>
-      {{#if help}}
-      <div class="help">
-        <a href="#" id="help-link">Aide</a>
+      <div class="left">
+        <img src="img/FNRASEC_Logo.png" alt="Logo FNRASEC">
       </div>
-      {{/if}}
+      <div class="center">
+        <h1>{{title}} {{#if help}}<a href="#" id="help-link"><img src="img/circle-question-solid.svg"
+              alt="Voir l'aide en ligne" title="Affcher l'aide en ligne"></a>{{/if}}</h1>
+      </div>
+      <div class="right">
+        <img src="img/SecuriteCivile_Logo.png " alt="Logo FNRASEC">
+      </div>
     </div>
+
 
     <div class="main-content">
       {{{body}}}
     </div>
 
-    <!-- <div style="height: 100px;"></div> -->
-
-    <div class="footer">
+    <div class="footer no-print">
       <span id="version" class="footer-text">FNRASEC {{title}} v{{version}}</span>
-      <span class="fnrasec-text">FNRASEC 2025</span>
-      <span class="footer-text"><a href="https://github.com/jlzola/fnrasec-winlink-template" target="_blank">FNRASEC
+      <span id="brand" class="fnrasec-text">FNRASEC 2025</span>
+      <span id="projectLink" class="footer-text"><a href="https://github.com/jlzola/fnrasec-winlink-template"
+          target="_blank">FNRASEC
           Winlink Templates</a></span>
     </div>
-
-    <!-- Aide en ligne -->
-    <!-- Aide en ligne -->
-    <!-- Aide en ligne -->
-    <!-- <div class="help-panel" id="help-panel">
-      <button class="close-btn" id="close-btn">Fermer</button>
-      <h2>Aide en Ligne</h2>
-      {{{help}}}
-    </div> -->
 
   </div>
 

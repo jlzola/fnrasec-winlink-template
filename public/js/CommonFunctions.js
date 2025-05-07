@@ -157,7 +157,8 @@ function setacc(str2conv) {
 	chaine_dest = chaine_dest.replace(/Ã›/g, "Û"); // U accent circonflexe
 	chaine_dest = chaine_dest.replace(/Ãœ/g, "Ü"); // U tréma
 
-
+	// œ
+	chaine_dest = chaine_dest.replace(/\Å/g, "œ");
 
 	// Traiter les caractères spéciaux unique en dernier
 	chaine_dest = chaine_dest.replace(/\?/g, "");
