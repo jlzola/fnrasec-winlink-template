@@ -86,8 +86,9 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vRoute">Reste-t-il des accès routiers carrossables à la zone ?</label>
-        <select id="vRoute" name="vRoute" style="max-width: 100px; margin-bottom: 5px;">
-          <option value="Non" selected="selected">Non</option>
+        <select id="vRoute" name="vRoute" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
+          <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
         </select>
@@ -99,8 +100,9 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vRouteTT">Reste-t-il des accès routiers tous terrains à la zone ?</label>
-        <select id="vRouteTT" name="vRouteTT" style="max-width: 100px; margin-bottom: 5px;">
-          <option value="Non" selected="selected">Non</option>
+        <select id="vRouteTT" name="vRouteTT" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
+          <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
         </select>
@@ -113,8 +115,9 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vElec">Electricité coupée ?</label>
-        <select id="vElec" name="vElec" style="max-width: 100px; margin-bottom: 5px;">
-          <option value="Non" selected="selected">Non</option>
+        <select id="vElec" name="vElec" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
+          <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
         </select>
@@ -126,11 +129,12 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vGaz">Réseau de gaz coupé ?</label>
-        <select id="vGaz" name="vGaz" style="max-width: 100px; margin-bottom: 5px;">
+        <select id="vGaz" name="vGaz" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
           <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
-          <option value="Sans objet" selected="selected">Sans objet</option>
+          <option value="Sans objet">Sans objet</option>
         </select>
         <textarea id="vComGaz" name="vComGaz" placeholder="Donner le maximum de précision." rows="2"
           onkeyup="AutoGrowTextArea(this)"></textarea>
@@ -140,8 +144,9 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vEau">Eau coupée ?</label>
-        <select id="vEau" name="vEau" style="max-width: 100px; margin-bottom: 5px;">
-          <option value="Non" selected="selected">Non</option>
+        <select id="vEau" name="vEau" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
+          <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
         </select>
@@ -153,8 +158,9 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vEauPotable">Eau potable disponible ?</label>
-        <select id="vEauPotable" name="vEauPotable" style="max-width: 100px; margin-bottom: 5px;">
-          <option value="Non" selected="selected">Non</option>
+        <select id="vEauPotable" name="vEauPotable" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
+          <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
         </select>
@@ -166,8 +172,9 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vCommunication">Réseaux de communication coupés ?</label>
-        <select id="vCommunication" name="vCommunication" style="max-width: 100px; margin-bottom: 5px;">
-          <option value="Non" selected="selected">Non</option>
+        <select id="vCommunication" name="vCommunication" style="max-width: 100px; margin-bottom: 5px;" required>
+          <option value="" selected disabled>-- Choisir --</option>
+          <option value="Non">Non</option>
           <option value="Oui">Oui</option>
           <option value="Partiel">Partiel</option>
         </select>
@@ -176,7 +183,6 @@
           onkeyup="AutoGrowTextArea(this)"></textarea>
       </div>
     </div>
-
 
     <div class="form-group button">
       <button type="submit">Envoyer</button>
