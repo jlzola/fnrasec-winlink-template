@@ -30,12 +30,32 @@
       ZoneOther.required = false;
       ZoneOther.value = "";
     }
-  }  
+  }
+
+
+  function onSubmit() {
+    // Supprime les accents majuscules dans le sujet
+    document.getElementById("vOrigine").value = removeUppercaseAccent(document.getElementById("vOrigine").value);
+    document.getElementById("vDestination").value = removeUppercaseAccent(document.getElementById("vDestination").value);
+    document.getElementById("vOther").value = removeUppercaseAccent(document.getElementById("vOther").value);
+    document.getElementById("Lieu_Inc").value = removeUppercaseAccent(document.getElementById("Lieu_Inc").value);
+    document.getElementById("vSituation").value = removeUppercaseAccent(document.getElementById("vSituation").value);
+    document.getElementById("vComRoute").value = removeUppercaseAccent(document.getElementById("vComRoute").value);
+    document.getElementById("vComRouteTT").value = removeUppercaseAccent(document.getElementById("vComRouteTT").value);
+    document.getElementById("vComElec").value = removeUppercaseAccent(document.getElementById("vComElec").value);
+    document.getElementById("vComGaz").value = removeUppercaseAccent(document.getElementById("vComGaz").value);
+    document.getElementById("vComEau").value = removeUppercaseAccent(document.getElementById("vComEau").value);
+    document.getElementById("vComEauPotable").value = removeUppercaseAccent(document.getElementById("vComEauPotable").value);
+    document.getElementById("vComCommunication").value = removeUppercaseAccent(document.getElementById("vComCommunication").value);
+
+    return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');
+  }
+</script>
 </script>
 
 <section id="main">
-  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post"
-    id="{{name}}Form" enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
+  <form onsubmit="onSubmit();" method="post" id="{{name}}Form" enctype="multipart/form-data"
+    action="http://{FormServer}:{FormPort}">
 
     {{> message-standard-header-form}}
 
@@ -74,8 +94,8 @@
     <div class="grid-container">
       <div class="form-group">
         <label for="vSituation">Situation</label>
-        <textarea name="vSituation" placeholder="Décrire la situation le plus concisement possible" rows="6" cols="110"
-          onkeyup="AutoGrowTextArea(this)"></textarea>
+        <textarea name="vSituation" id="vSituation" placeholder="Décrire la situation le plus concisement possible"
+          rows="6" cols="110" onkeyup="AutoGrowTextArea(this)"></textarea>
       </div>
     </div>
 
