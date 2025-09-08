@@ -1,6 +1,6 @@
 ﻿//=================================================================
 // Fonctions communes à tous les formulaires
-// Auteur : F1COB Jean-Michel BROCAL
+// Auteur : F1COB Jean-Michel BROCAL - F4IXH Jean-Louis ZOLA
 //		Version 5.3
 //=================================================================
 // Changement du type de formulaire
@@ -23,6 +23,7 @@ function AutoGrowTextArea(textField) {
 		if (textField.clientHeight < textField.scrollHeight) { textField.style.height = (textField.scrollHeight * 2 - textField.clientHeight) + "px"; }
 	}
 }
+
 //======================================================================================
 // Calcul de la date en UTC
 //======================================================================================	
@@ -54,7 +55,6 @@ function SetDateToUTC() {
 	}
 }
 
-
 //======================================================================================
 // Permet de ne saisir que des chiffre dans un input
 //======================================================================================	
@@ -74,7 +74,6 @@ function isNumberKey(event) {
 }
 
 
-
 //======================================================================================
 // Traitement des caractères accentués :
 // Reçu par Winlink : Ã - Ã¢ - Ã¤ - Ã© - Ã¨ - Ãª - Ã« - Ã® - Ã¯ - Ã´ - Ã¶ - Ã¹ - Ã» - Ã¼ - Ã¿ - Ã§.
@@ -82,7 +81,10 @@ function isNumberKey(event) {
 // Tous les caractères du clavier AZERTY français sont corrigés
 //======================================================================================
 function setacc(str2conv) {
+
+	// Initialisation
 	let chaine_dest = str2conv;
+
 	// traitement des "a"
 	chaine_dest = chaine_dest.replace(/Ã¢/g, "â"); // a accent circonflexe
 	chaine_dest = chaine_dest.replace(/Ã¤/g, "ä"); // a tréma		
@@ -130,14 +132,14 @@ function setacc(str2conv) {
 
 
 	// 
-	// Tentative de remplacement des Majuscule avec accet 
+	// Tentative de remplacement des Majuscule avec accent 
 	// mais ca ne fonctionne pas :o(
 
 	// Traitement des "A"
 	chaine_dest = chaine_dest.replace(/Ã‚/g, "Â"); // A accent circonflexe
 	chaine_dest = chaine_dest.replace(/Ã„/g, "Ä"); // A tréma
 
-	// Traitement des "E"
+	// Traitement des "E"	
 	chaine_dest = chaine_dest.replace(/Ã‰/g, "É"); // E accent aigu                  
 	chaine_dest = chaine_dest.replace(/Ã‰/g, "É"); // É Majuscule  accent aigu 
 	chaine_dest = chaine_dest.replace(/Ãˆ/g, "È"); // E accent grave
@@ -160,6 +162,11 @@ function setacc(str2conv) {
 	// œ
 	chaine_dest = chaine_dest.replace(/\Å/g, "œ");
 
+	// œ
+	chaine_dest = chaine_dest.replace(/\Å/g, "œ");
+
+
+
 	// Traiter les caractères spéciaux unique en dernier
 	chaine_dest = chaine_dest.replace(/\?/g, "");
 	chaine_dest = chaine_dest.replace(/â€/g, "'");
@@ -168,4 +175,18 @@ function setacc(str2conv) {
 
 
 	return chaine_dest;
+}
+
+//======================================================================================
+// Suppression des accents majuscules
+//======================================================================================
+function removeUppercaseAccent(text) {
+	let removedUppercaseAccentText = text.replace(/[ÀÁÂÃÄÅ]/g, "A");
+
+	removedUppercaseAccentText = removedUppercaseAccentText.replace(/[ÈÉÊË]/g, "E");
+	removedUppercaseAccentText = removedUppercaseAccentText.replace(/[ÌÍÎÏ]/g, "I");
+	removedUppercaseAccentText = removedUppercaseAccentText.replace(/[ÒÓÔÕÖ]/g, "O");
+	removedUppercaseAccentText = removedUppercaseAccentText.replace(/[ÙÚÛÜ]/g, "U");
+
+	return removedUppercaseAccentText;
 }
