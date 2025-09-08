@@ -14,11 +14,21 @@
     // Initialise la date et l'heure 
     SetDateToUTC();
   }
+
+  function onSubmit() {
+    // Supprime les accents majuscules dans le sujet
+    document.getElementById("vOrigine").value = removeUppercaseAccent(document.getElementById("vOrigine").value);
+    document.getElementById("vDestination").value = removeUppercaseAccent(document.getElementById("vDestination").value);
+    document.getElementById("vSubject").value = removeUppercaseAccent(document.getElementById("vSubject").value);
+    document.getElementById("vMessage").value = removeUppercaseAccent(document.getElementById("vMessage").value);
+
+    return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');
+  }
 </script>
 
 <section id="main">
-  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post"
-    id="{{name}}Form" enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
+  <form onsubmit="onSubmit();" method="post" id="{{name}}Form" enctype="multipart/form-data"
+    action="http://{FormServer}:{FormPort}">
 
     {{> message-standard-header-form}}
 
@@ -41,7 +51,6 @@
     <div class="form-group button">
       <button type="submit">Envoyer</button>
     </div>
-
 
   </form>
 </section>

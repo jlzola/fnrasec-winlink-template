@@ -2,21 +2,26 @@
   {
     "title": "Message Exercice",
     "name": "MessageExercice",
-    "version": "25.5.5"
+    "version": "25.9.6"
   },
   {
     "title": "Message de commandement",
     "name": "MessageCommandement",
-    "version": "25.5.5"
+    "version": "25.9.6"
+  },
+  {
+    "title": "Arrêté Préfectoral",
+    "name": "ArretePrefectoral",
+    "version": "25.9.6"
   },
   {
     "title": "Etat des réseaux",
     "name": "EtatReseaux",
-    "version": "25.5.5"
+    "version": "25.9.6"
   },
   {
     "title": "Accusé de réception",
     "name": "AR",
-    "version": "25.5.5"
+    "version": "25.9.6"
   }
 ]
