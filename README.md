@@ -3,7 +3,17 @@
 ![Badge de Statut](https://img.shields.io/badge/statut-en%20d%C3%A9veloppement-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-LEs modèles de formulaire FNRAEC pour Winlink + VARA.
+Les modèles de formulaire FNRASEC pour Winlink + VARA.
+
+
+## Documentation disponible
+
+| Page | Description |
+|------|-------------|
+| [Installation de Winlink et Vara](https://github.com/jlzola/fnrasec-winlink-template/wiki/Installation-de-Winlink-et-VARA) | Guide pas à pas pour installer Winlink et VARA. |
+| [Installation des templates FNRASEC](https://github.com/jlzola/fnrasec-winlink-template/wiki/Installation-des-mod%C3%A8les-(templates)) | Installation manuelle ou automatique des modèles Winlink de la FNRASEC. |
+
+
 
 ## 📋 Table des matières
 
@@ -20,7 +30,9 @@ LEs modèles de formulaire FNRAEC pour Winlink + VARA.
 
 - Formulaire "Message Exercice" 
 - Formulaire "Message de commandement" 
-- Formulaire "Etat des Réseaux"  (à venir)
+- Formulaire "Bilan de situation"
+- Formulaire "Etat des Réseaux"
+- Formulaire "Arrêté Préfectoral"
 - Formualire "Accusé de Réception"
 
 ## 🔧 Prérequis

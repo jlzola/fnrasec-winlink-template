@@ -29,11 +29,24 @@
     document.getElementById("vLieu").value = "AR";
 
   }
+
+
+  function onSubmit() {
+    // Supprime les accents majuscules dans le sujet
+    document.getElementById("vOrigine").value = removeUppercaseAccent(document.getElementById("vOrigine").value);
+    document.getElementById("vDestination").value = removeUppercaseAccent(document.getElementById("vDestination").value);
+    document.getElementById("vSubject").value = removeUppercaseAccent(document.getElementById("vSubject").value);
+    document.getElementById("vComment").value = removeUppercaseAccent(document.getElementById("vComment").value);
+
+    return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');
+  }
+</script>
+
 </script>
 
 <section id="main">
-  <form onsubmit="return confirm('Cliquez sur OK et fermez la fenêtre de navigateur vide.');" method="post" id="ARForm"
-    enctype="multipart/form-data" action="http://{FormServer}:{FormPort}">
+  <form onsubmit="onSubmit();" method="post" id="ARForm" enctype="multipart/form-data"
+    action="http://{FormServer}:{FormPort}">
 
     <input name="TemplateVersion" type="hidden" id="TemplateVersion" value="{{version}}" />
 
@@ -53,11 +66,11 @@
         <label>Niveau de confidentialité</label>
         <div class="radio-group">
           <div class="red">
-            <input type="radio" name="vConfid" value="DR" checked>
+            <input type="radio" name="vConfid" value="DR">
             <span>DR</span>
           </div>
           <div class="orange">
-            <input type="radio" name="vConfid" value="Normal">
+            <input type="radio" name="vConfid" value="Normal" checked>
             <span>Normal</span>
           </div>
         </div>
@@ -130,29 +143,29 @@
     <div class="grid-container2">
       <div class="form-group">
         <label for="vOper">Indicatif de l'opérateur</label>
-        <input name="vOper" title="Indicatif de l'opérateur"
+        <input name="vOper" id="vOper" title="Indicatif de l'opérateur"
           placeholder="Indicatif du radioamateur qui opère la station. Ex : F4IXH" size="10" maxlength="10"
           class="bg-yellow" />
       </div>
 
       <div class="form-group">
         <label for="vOrigine">Autorité origine</label>
-        <input name="vOrigine" title="Autorité origine" placeholder="Ex: COGIC, COD, COZ, etc..." size="80"
-          maxlength="80" class="bg-green" />
+        <input name="vOrigine" id="vOrigine" title="Autorité origine" placeholder="Ex: COGIC, COD, COZ, etc..."
+          size="80" maxlength="80" class="bg-green" />
       </div>
     </div>
 
     <div class="grid-container2">
       <div class="form-group">
         <label for="vTo">Indicatif du destinataire</label>
-        <input name="vTo" title="Indicatif du destinataire"
+        <input name="vTo" id="vTo" title="Indicatif du destinataire"
           placeholder="L'indicatif du radioamateur qui reçoit le message. Ex : F1COB" size="10" maxlength="10"
           class="bg-yellow" value="{MsgOriginalSender}" />
       </div>
       <div class="form-group">
         <label for="vDestination">Autorité destinataire</label>
-        <input name="vDestination" title="Autorité destinataire" placeholder="Ex: COGIC, COD, COZ, etc..." size="80"
-          maxlength="80" class="bg-green" />
+        <input name="vDestination" id="vDestination" title="Autorité destinataire"
+          placeholder="Ex: COGIC, COD, COZ, etc..." size="80" maxlength="80" class="bg-green" />
       </div>
     </div>
 

@@ -105,6 +105,60 @@ router.get('/FNRASEC_MessageCommandement_Viewer', (req, res) => {
 });
 
 
+// @desc   ArretePrefectoral_Initial
+// @route   GET /FNRASEC_ArretePrefectoral_Initial
+router.get('/FNRASEC_ArretePrefectoral_Initial', (req, res) => {
+
+  // récupère les informations du template ArretePrefectoral 
+  const template = templatesService.getTemplateInfo('ArretePrefectoral');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.initial}`, {
+    ...template,
+    help: "yes"
+  });
+});
+
+// @desc   ArretePrefectoral_Viewer
+// @route   GET /FNRASEC_ArretePrefectoral_Viewer
+router.get('/FNRASEC_ArretePrefectoral_Viewer', (req, res) => {
+
+  // récupère les informations du template ArretePrefectoral 
+  const template = templatesService.getTemplateInfo('ArretePrefectoral');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.viewer}`, {
+    ...template
+  });
+});
+
+
+// @desc   BilanSituation_Initial
+// @route   GET /FNRASEC_BilanSituation_Initial
+router.get('/FNRASEC_BilanSituation_Initial', (req, res) => {
+  // récupère les informations du template BilanSituation
+  const template = templatesService.getTemplateInfo('BilanSituation');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.initial}`, {
+    ...template,
+    help: "yes"
+  });
+});
+
+// @desc   BilanSituation_Viewer
+// @route   GET /FNRASEC_BilanSituation_Viewer
+router.get('/FNRASEC_BilanSituation_Viewer', (req, res) => {
+  // récupère les informations du template BilanSituation
+  const template = templatesService.getTemplateInfo('BilanSituation');
+
+  // affiche le template AR_Viewer
+  res.render(`templates/${template.name}/${template.files.viewer}`, {
+    ...template
+  });
+});
+
+
 // @desc   EtatReseaux_Initial
 // @route   GET /FNRASEC_EtatReseaux_Initial
 router.get('/FNRASEC_EtatReseaux_Initial', (req, res) => {
@@ -131,6 +185,8 @@ router.get('/FNRASEC_EtatReseaux_Viewer', (req, res) => {
     ...template
   });
 });
+
+
 
 
 

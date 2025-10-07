@@ -2,7 +2,7 @@
 ReplyTemplate: {{ReplyTemplate}}
 SeqInc:
 To: <var vTo> 
-Subject: [<var Priority>][<var vLieu>/<var SeqNum>] ETAT DES RESEAUX - <var vSubject>
+Subject: [<var Priority>][<var vLieu>/<var SeqNum>] ETAT DES RESEAUX - <var vEvent>
 Msg:
 ------------------------------------------------------------------------
 -- ETAT DES RESEAUX 

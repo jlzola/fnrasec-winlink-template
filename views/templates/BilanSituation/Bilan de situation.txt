@@ -1,0 +1,37 @@
+﻿Form: FNRASEC_BilanSituation_Initial.html, FNRASEC_BilanSituation_Viewer.html
+ReplyTemplate: {{ReplyTemplate}}
+SeqInc:
+To: <var vTo> 
+Subject: [<var Priority>][<var vLieu>/<var SeqNum>] <var vSubject>
+Msg:
+------------------------------------------------------------------------
+-- BILAN DE SITUATION 
+------------------------------------------------------------------------
+
+Message N°: <var vLieu>/<var SeqNum>
+Priorité: <var Priority>
+Confidentialité: <var vConfid>
+
+Date/Heure: <var DateTime>
+Demande AR: <var Dem_Rep>
+Indicatif de la station: <var msgSender>
+
+------------------------------------------------------------------------
+
+Indicatif Opérateur: <var vOper>
+Autorité origine: <var vOrigine>
+
+Destinataire(s): <var vTo>
+Autorité(s) destinataire : <var vDestination>
+
+------------------------------------------------------------------------
+
+Sujet: <var vSubject>
+
+Message: <var vMessage>
+
+
+------------------------------------------------------------------------
+Express Sending Station: <MsgSender>
+Express Version: <ProgramVersion>
+Template Version: <var Templateversion>

@@ -30,7 +30,7 @@
     <label>Priorité</label>
     <div class="radio-group">
       <div class="red">
-        <input type="radio" name="Priority" value="IMMEDIAT" checked>
+        <input type="radio" name="Priority" value="IMMEDIAT">
         <span>Immédiat</span>
       </div>
       <div class="orange">
@@ -38,7 +38,7 @@
         <span>Urgent</span>
       </div>
       <div class="green">
-        <input type="radio" name="Priority" value="ROUTINE">
+        <input type="radio" name="Priority" value="ROUTINE" checked>
         <span>Routine</span>
       </div>
     </div>
@@ -48,11 +48,11 @@
     <label>Niveau de confidentialité</label>
     <div class="radio-group">
       <div class="red">
-        <input type="radio" name="vConfid" value="DR" checked>
-        <span>DR</span>
+        <input type="radio" name="vConfid" value="DR">
+        <span title="Diffusion Restreinte">DR</span>
       </div>
       <div class="orange">
-        <input type="radio" name="vConfid" value="Normal">
+        <input type="radio" name="vConfid" value="Normal" checked>
         <span>Normal</span>
       </div>
     </div>
@@ -75,7 +75,7 @@
 
   <div class="form-group">
     <div style="display: flex; align-items: center; height: 100%; padding-top: 10px; padding-left: 0px;">
-      <input type="checkbox" name="Dem_Rep" id="Dem_Rep" value="Oui" checked
+      <input type="checkbox" name="Dem_Rep" id="Dem_Rep" value="Oui"
         onclick="this.value = this.checked ? 'Oui' : 'Non';"
         style="width: 20px; height: 20px; margin-right: 8px; margin-top: 0;">
       <label for="Dem_Rep" style="margin: 0; display: flex; align-items: center;">Demander un accusé de
@@ -97,14 +97,14 @@
 
   <div class="form-group">
     <label for="vOper">Indicatif de l'opérateur</label>
-    <input name="vOper" title="Indicatif de l'opérateur" placeholder="Indicatif du radioamateur qui opère la station."
-      size="10" maxlength="10" class="bg-yellow" />
+    <input name="vOper" id="vOper" title="Indicatif de l'opérateur"
+      placeholder="Indicatif du radioamateur qui opère la station." size="10" maxlength="10" class="bg-yellow" />
   </div>
 
   <div class="form-group">
     <label for="vOrigine">Autorité origine</label>
-    <input name="vOrigine" title="Autorité origine" placeholder="Ex: Cézoc SUD, COGIC, Préfecture, etc..." size="80"
-      maxlength="80" class="bg-green" />
+    <input name="vOrigine" id="vOrigine" title="Autorité origine" placeholder="Ex: COZ-SUD, COGIC, Préfecture, etc..."
+      size="80" maxlength="80" class="bg-green" />
   </div>
 </div>
 
@@ -112,7 +112,7 @@
 <div class="grid-container">
   <div class="form-group">
     <label for="vTo">Indicatifs du/des destinataire(s)</label>
-    <input name="vTo" title="Indicatifs du/des destinataires"
+    <input name="vTo" id="vTo" title="Indicatifs du/des destinataires"
       placeholder="Les indicatifs doivent être séparés par des ';'. Ex : F6PCT;F8KFG;F8KIA" size="100" maxlength="100"
       class="bg-yellow" />
   </div>
@@ -121,8 +121,8 @@
 <div class="grid-container">
   <div class="form-group">
     <label for="vDestination">Autorités destinataires</label>
-    <input name="vDestination" title="Autorités destinataires" placeholder="Ex: COGIC, COD, COZ, etc..." size="100"
-      maxlength="100" class="bg-green" />
+    <input name="vDestination" id="vDestination" title="Autorités destinataires"
+      placeholder="Ex: COGIC, COD, COZ, etc..." size="100" maxlength="100" class="bg-green" />
   </div>
 </div>
 
