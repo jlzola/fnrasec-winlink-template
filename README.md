@@ -30,7 +30,9 @@ Les modèles de formulaire FNRASEC pour Winlink + VARA.
 
 - Formulaire "Message Exercice" 
 - Formulaire "Message de commandement" 
-- Formulaire "Etat des Réseaux"  (à venir)
+- Formulaire "Bilan de situation"
+- Formulaire "Etat des Réseaux"
+- Formulaire "Arrêté Préfectoral"
 - Formualire "Accusé de Réception"
 
 ## 🔧 Prérequis
